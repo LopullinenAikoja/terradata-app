@@ -1,0 +1,119 @@
+ <title>TerraData Version 1.3</title>
+   
+	<head>
+		<link rel="stylesheet" href="css/style2.css" type="text/css" media="screen, projection"/>
+
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" />
+		<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+		<!--<link rel="stylesheet" href="resources/demos/style.css" />-->
+	
+	
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		
+		
+	</head>
+	
+	<body>
+		
+		<div id="banner">
+			<div id="banner-content">
+				TerraData v2 
+			</div>
+		</div>
+		
+		<div id="map" name="map">
+		</div>
+	
+		<div id="resultsBox" name="resultsBox">
+			
+		</div>
+		
+	
+
+	<script>
+		var exampleProp = {"state":"MA","county":"Berkshire","longitude":"-70.4671","latitude":"41.6348","parcelAddress":"328 PHEASANT HILL CIRCLE","city":"BARNSTABLE","zipcode":"2635","parcelid":"002_002_037","landuse":"1010","acerage":"0.29","owner":"WAWLAGALA, CRISHANTHA T & ARUNI P","townNumber":"20","assessment":"156500","zoning":"RF","book":"23777","page":"68","lsdate":"20090605","lsprice":"160000","wetcode":null,"itValdesc":null,"areaAcres":null};
+		
+		//var prop = new Object();	
+
+		var propertyInfo = document.createElement("TABLE"); 
+		
+		for(property in exampleProp){
+						
+			//prop[property] = exampleProp[property]
+			
+			var row = document.createElement("TR");
+			var cell = document.createElement("TD");
+			cell.innerHTML = property;
+			var cell2 = document.createElement("TD");
+			cell2.innerHTML = exampleProp[property];
+			row.appendChild(cell);
+			row.appendChild(cell2);
+			row.setAttribute("height", "30");
+			propertyInfo.appendChild(row);
+		}
+		document.getElementById("resultsBox").appendChild(propertyInfo);
+	
+	</script>
+
+	
+	
+	<script>
+	
+	function townParcelMaps(){
+		var townNumber = (dijit.byId('townParcelMaps').attr('value'))
+		var file = 'MA_' + townNumber;
+		var kmlURL = 'http://commondatastorage.googleapis.com/td01/Parcel%20%26%20Road%20Town-By-Town/'+ townNumber +'.kml'
+		parcelLayerLookup(file,kmlURL);
+
+	}
+	
+	</script>
+	
+	<!-- Example Json -->
+	<script type="text/javascript" src="scripts/exampleJson.js"> </script>
+	
+	
+	<!-- Google Earth Plugin Map functions -->
+	<script type="text/javascript" src="scripts/map.js"> </script>
+	<script type="text/javascript" src="scripts/pinMap.js"> </script>
+	<script type="text/javascript" src="scripts/updateMap.js"> </script>
+	
+	
+	<!-- KML objects Possibly reorganize in the future-->
+	<script type="text/javascript" src="scripts/parcelLayerKmlObjects.js"> </script>
+	<script type="text/javascript" src="scripts/roadLayerKmlObjects.js"> </script>
+	<script type="text/javascript" src="scripts/wetlandLayerKmlObjects.js"> </script>	
+	<script type="text/javascript" src="scripts/thematicLayerKmlObjects.js"></script>
+
+
+	<!-- thematic overlays function for the demo -->
+	<script type="text/javascript" src="scripts/loadThematicOverlays.js"> </script>	
+	
+	<!-- KML related functions -->
+	<script type="text/javascript" src="scripts/parcelLayerLookup.js"> </script>
+	<script type="text/javascript" src="scripts/roadLayerLookup.js"> </script>	
+	<script type="text/javascript" src="scripts/removeParcelLayer.js"> </script>	
+	
+		<!-- Wetlands functions and variable -->
+	<script type="text/javascript" src="scripts/wetlandsLayerLookup.js"> </script>
+	
+	<!-- All the clear KML functions -->
+	<script type="text/javascript" src="scripts/clearKml.js"> </script>
+	
+	<-- Load State Related Layers -->
+	<script type="text/javascript" src="scripts/stateLayers.js"> </script>
+	
+	<!-- contains print results functions -->
+	<script type="text/javascript" src="scripts/printResults.js"> </script>
+	
+	<!-- Contains update info screen functions -->
+	<script type="text/javascript" src="scripts/updateInfoScreen.js"> </script>
+
+	
+
+
+	</body>
+
+  </body>
+</html>

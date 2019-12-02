@@ -1,0 +1,537 @@
+ <!doctype html>
+<html xmlns:fb="http://ogp.me/ns/fb#"  xml:lang="en-gb" lang="en-gb" >
+	<title>TerraData Version 1.3.1</title>
+		<!-- css -->
+		<!--<link rel="stylesheet" href="resources/demos/style.css" />-->
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen, projection"/>
+		
+		<!-- jQuery -->
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" />
+		<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+		
+		<!--jQuery Bootstrap-style Dropdowns Plugin
+		<link type="text/css" rel="stylesheet" href="css/jquery.dropdown.css" />
+		<script type="text/javascript" src="scripts/jquery.dropdown.js"></script>
+		 -->
+		 
+		<!-- load Dojo -->
+		<link rel="stylesheet" href="scripts/dojo-release-1.8.1/dijit/themes/claro/claro.css">
+		<script src="scripts/dojo-release-1.8.1/dojo/dojo.js" data-dojo-config="isDebug: true, async: true, parseOnLoad: true"></script>
+		
+		<!-- google -->
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		
+		<!-- what -->
+		<script type="text/javascript" src="scripts/organictabs.jquery.js"></script>
+		<script type='text/javascript'>
+			$(function() {
+				$("#informationBar").organicTabs({"speed": "fast"});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="page_wrapper">
+			
+			<!-- left column -->
+			<div id="left-column-wrapper">
+				<div name="querybox" class="left-column-shell">
+					<div id="queryParametersBox">
+						<form id="queryParams" name="queryParams">
+							
+							<!-- location -->
+							<div class="form-block-title-white">Search Location</div>
+
+							<div id="stateSelectDropDown" name="stateSelectDropDown" class="select-row">
+								<div class="claro">
+									<select id="stateSelect" data-dojo-type="dijit/form/FilteringSelect" name="stateSelect" onChange="stateChange()" >
+										<option id="dummy" name="state" value="">Select a State</option>
+										<option id="colorado" name="state" value="CO">Colorado</option>
+										<option id="connecticut" name="state" value="CT">Connecticut</option>
+										<option id="delaware" name="state" value="DE">Delaware</option>
+										<option id="washingtonDC" name="state" value="DC">District of Columbia</option>
+										<option id="hawaii" name="state" value="HI">Hawaii</option>												
+										<option id="idaho" name="state" value="ID">Idaho</option>
+										<option id="maryland" name="state" value="MD">Maryland</option>																
+										<option id="massachusetts" name="state" value="MA" selected="selected">Massachusetts</option>	
+										<option id="montana" name="state" value="MT">Montana</option>									
+										<option id="newJersey" name="state" value="NJ">New Jersey</option>
+										<option id="oregon" name="state" value="OR">Oregon</option>
+										<option id="wyoming" name="state" value="WY">Wyoming</option>
+									</select>
+								</div>
+							</div>
+		
+							<div id="countySelectDropDown" name="countySelectDropDown" class="select-row claro">
+								<select id="countySelect" data-dojo-type="dijit/form/Select" name="countySelect" onChange="countyChange()" maxHeight="-1">
+										<option id="dummy" name="county" value="" selected="selected">Select a County</option>
+								</select>
+							</div>					
+		
+							<div id="townSelectDropDown" name="townSelectDropDown" class="select-row">
+								<select name="townSelect" id="townSelect" data-dojo-type="dijit/form/Select" maxHeight="-1"/>
+									<option id="dummy" name="town" value="" selected="selected">Select a Town</option>
+								</select>	
+							</div>
+							
+							<div class="input-row">
+								<input id="ownername" name="ownername" type="text" placeholder="Owner Name                      (optional)" data-dojo-type="dijit/form/TextBox" />
+							</div>
+							<br />
+							
+							<!-- acreage -->
+							<div class="form-block-title-white">Acreage</div>
+							<div class="input-row">
+								<input id="acerageLowerBound" type="text" placeholder="Greater Than                     (optional)" />
+							</div>
+							<div class="input-row">
+								<input id="acerageUpperBound" type="text" placeholder="Less Than                           (optional)" />
+							</div>
+							<br/>
+							
+							<!-- assesment -->
+							<div class="form-block-title-white">Assessment</div>
+							<div class="input-row">
+									<input id="aLower" name="aLower" type="text" placeholder="Value Greater Than            (optional)" />
+							</div>
+							<div class="input-row">
+									<input id="aUpper" name="aUpper" type="text" placeholder="Value Less Than                  (optional)" />
+							</div>
+							<br/>
+							
+							<!-- book page -->
+							<div class="form-block-title-white">Book/Page</div>
+							<div class="input-row">
+								<input id="book" type="text" placeholder="Book Greater Than            (optional)"  /> 
+							</div>
+							<div class="input-row">
+								<input id="page" type="text" placeholder="Book Less Than                   (optional)"  /> 
+							</div>
+							<br/>
+							
+							<!-- more options -->
+							<div class="form-block-title-white">More Optons</div>
+							<div class="input-row">
+									<input id="book" type="text" placeholder="Book Greater Than             (optional)"  /> 
+							</div>
+							<div class="input-row">
+									<input id="page" type="text" placeholder="Book Less Than                   (optional)"  /> 
+							</div>
+							<br/>		
+						
+							<!-- more options -->
+							<div class="form-block-title-gold">More Optons</div>
+							<!--<a href="#" id="toggle"> More Options (click to expand)</a>-->
+							
+							<div id="advancedSearch" class="link-grey">
+								<dl class="accordion">
+		
+									<dt><a href="#">Parcel Information & Land Use</a></dt>
+										<dd>								
+											<div class="input-row">
+												<input id="parcelid" name="parcelid" type="text" placeholder="Parcel ID" />
+											</div>
+											<div class="input-row">
+												<td> <input id="parcelAddress" name="parcelAddress" type="text" placeholder="Parcel Address" />								
+											</div>
+											<div class="input-row">
+												<input id="landuse" name="landuse" type="text" placeholder="Land Use" />
+											</div>											
+										</dd>
+		
+										
+										<dt><a href="#">Book & Page</a></dt>
+										<dd>
+											<div class="input-row">
+												<input id="book" type="text" placeholder="Book Less Than" />
+											</div>
+											<div class="input-row">
+												<input id="page"type="text" placeholder="Page Less Than" />
+											</div>								
+										</dd>
+										
+										<dt><a href="#">Owner Information</a></dt>
+										<dd>
+											<div class="input-row">
+												<input id="ownerStateSearch" name="ownerStateSearch" data-dojo-type="dijit/form/CheckBox" value="Owner/Parcel State Different?" onfocus="if(this.value=='Owner/Parcel State Different?'){this.value='';}" onblur="if(this.value==''){this.value='Owner/Parcel State Different?';} else { this.value='yes';}" /> 
+											</div>
+										</dd>
+										
+										<dt><a href="#">Wetlands</a></dt>
+											<dd>
+											<!--
+												<div id="wetlandsTypeBox">
+													<label> Wetlands Type </label>
+													<br/>
+												</div>
+											-->
+												<div class="input-row">
+													<input id="wetlandsSearch" name="wetlandsSearch" type="text" data-dojo-type="dijit/form/CheckBox" value="Exclude Wetlands?" onfocus="if(this.value=='Exclude Wetlands?'){this.value='';}" onblur="if(this.value==''){this.value='Exclude Wetlands?';} else { this.value='yes'; hideWetcode();}" />
+												</div>
+												<div class="input-row">
+													<input id="wetcode" name="wetcode" type="text" placeholder="Wetcode" />
+												</div>
+												
+												<div class="input-row">
+													<input id="areaAcres" name="areaAcres" type="text" placeholder="Area by Acres" />
+												</div>
+											</dd>
+									
+									<dt><a href="#">Liens</a></dt>
+									<dd>
+										<div class="input-row">
+											<input id="lienquery" name="lienquery" data-dojo-type="dijit/form/CheckBox" value="Search All Liens?" onfocus="if(this.value=='Search All Liens?'){this.value='';}" onblur="if(this.value==''){this.value='Search All Liens?';} else { this.value='yes'; hideDpStatus();}" /></td>
+										</div>
+										<div class="input-row">
+											 Lien Type and Amount
+											<div id="lienTypesCell"></div>										
+										</div>							
+									</dd>
+									<!--
+										<dt><a href="#"> Max Results </a></dt>
+										<dd>
+											<label for="maxresults">MAX RESULTS</label>	<input id="maxresults" name="maxresults">
+										</dd>	
+									-->
+								</dl>
+							</div>
+						</form>
+						<img id="progress" name="progress" src ="images/progress-bar.gif" width="400" height="50" alt="---" />
+					</div>
+					
+					<div id="queryboxButtons">
+						<button class="submit-button" data-dojo-type="dijit/form/Button" type="button">QUERY
+							<script type="dojo/on" data-dojo-event="click" data-dojo-args="evt">
+								require(["dojo/dom"], function(dom){
+									submitQuery();
+								});
+							</script>
+						</button>	
+						
+						<button class="submit-button" data-dojo-type="dijit/form/Button" type="button">RESET
+							<script type="dojo/on" data-dojo-event="click" data-dojo-args="evt">
+								require(["dojo/dom"], function(dom){
+									//reset the queryParams form
+									document.getElementById('queryParams').reset();
+								});
+							</script>
+						</button>
+					</div>
+				</div>
+				
+			<!-- end left column -->
+			</div>		
+					
+			
+			<!-- right column -->
+			<div id="right-column-wrapper">
+			
+				<!-- header -->
+				<div id="banner">
+					<div id="banner-results">
+						<p id="resultsHandle" name="resultsHandle"> RESULTS </p>
+					</div>
+					<div id="banner-content">
+						TerraData v2 <!--<a href="/userLogging" target="_blank"> Logs </a>-->
+					</div>
+				</div>
+				
+				<!-- header -->
+				<div id="search-results-panel-wrapper">
+					<div class="search-results-panel-shell">
+						<div class="search-results-panel-content">
+							<!--
+							<div class="panel-row"><div class="panel-number-block">1</div><div class="panel-text-block">This is a test</div></div>
+							<div class="panel-row"><div class="panel-number-block">2</div><div class="panel-text-block">This is a test</div></div>
+							<div class="panel-row"><div class="panel-number-block">3</div><div class="panel-text-block">This is a test</div></div>
+							<div class="panel-row"><div class="panel-number-block">4</div><div class="panel-text-block">This is a test</div></div>
+							<div class="panel-row"><div class="panel-number-block">5</div><div class="panel-text-block">This is a test</div></div>
+							-->
+							
+							<!-- results -->
+								<div name="resultsList" id="resultsList" style="overflow:auto;">
+								
+									<div id="resultsTable1" name="resultsTable1" style="display:none; overflow:auto;"></div>
+									<div id="Searchresult"><!--items here--></div>
+								</div>	
+							
+							<!-- results -->
+							<div id ="resultsBox" name="resultsBox" class="column-right">
+			
+							<div id="Pagination" class="pagination"></div>
+
+								<!--<input type="button" value="LAYERS" data-dropdown="#dropdown-1" />-->
+					
+								<!--
+								<button data-dojo-type="dijit/form/Button" type="button">Download Results
+										<script type="dojo/on" data-dojo-event="click" data-dojo-args="evt">
+											require(["dojo/dom"], function(dom){
+												//alert($('#queryParams').serialize());
+												$('<iframe id="dlBox" name="dlBox" hieght=0px width=0px style="display:none" src="/query?download=yes&' + $('#queryParams').serialize() + '">').appendTo('body');
+											});
+										</script>
+								</button>	
+								-->
+								
+								
+								<!--
+								<div id="additonalParcelLayers">
+									<br/>
+										<table>
+											<tr>
+												<td> <label>Additional Parcel Layers:</label> </td>
+												<td id="parcelLayersCell"> </td>
+											</tr>
+										</table>
+								</div>
+								-->
+								
+								
+								<div name="resultsInfo" id="resultsInfo">
+									<div id="radiusSearchBox"></div>
+									<div id="downloadParcelInfoDiv">
+										<button id="downloadParcelInfo" data-dojo-type="dijit/form/Button" type="button"> Download Parcel Info
+											<script type="dojo/on" data-dojo-event="click" data-dojo-args="evt">
+												require(["dojo/dom"], function(dom){
+													alert("A result has not been clicked yet");
+												});
+											</script>
+										</button>
+									</div>
+									<div id="infoTable" name="infoTable" >Property Info</div>
+								</div>	
+							
+							</div>
+							
+							<!--
+							<div id="dropdown-1" class="dropdown dropdown-tip">
+								<div class="dropdown-panel">
+									<div id="layersBox" name="layersBox">
+					
+										<div>Nation Wide Layers</div>
+											<div id="nationWideLayers" name="nationWideLayers">  
+											</div>
+									
+											<br/>						
+											<div>State Wide Layers</div>
+											<div id="stateWideLayers" name="stateWideLayers">
+											</div>
+										
+											<br/>
+											<div> County Wide Layers </div>
+										
+											<div id="countyWideLayers" name="countyWideLayers"> 
+												<div id="wetlandsBox" name ="wetlandsBox">
+													<button name="wetlands" id="wetlands"  data-dojo-type="dijit/form/ToggleButton"
+														data-dojo-props="iconClass:'dijitCheckBoxIcon', checked:false">Wetlands
+														<script type="dojo/on" data-dojo-event="click" data-dojo-args="evt">
+															require(["dojo/dom"], function(dom){
+																if(!document.getElementById("wetlands").checked){																			
+																	wetlandsLayerLookup();												
+																}else{
+																	clearWetlandsKml();
+																}
+															});
+															
+														</script>
+													</button>
+												</div>
+												<div id="countyLayersBox" name="countyLayersBox">
+											</div>
+										</div>
+									</div>
+								</div>
+							-->
+							
+							<!-- end results -->
+							</div>
+	
+						</div>
+						<div id="panel-tab" class="panel-tab">Properties</div>
+					</div>
+					
+					
+					<div id="below-panel-wrapper">
+					
+						<!-- help -->
+						<div id="help-wrapper">
+							<div class="help-1">
+								Please select the state in which you would like to search. You may narrow down the search criteria by optionally selecting a county and a town as well. Additionally you may search a property by owner name.
+							</div>
+							
+							<div class="help-2">
+								Further narrow down your search by choosing an assessment maximum value and or a minimum value.
+							</div>
+							
+							<div class="help-3">
+								Further narrow down your search by choosing an acreage maximum value and or a minimum value.
+							</div>
+							
+							<div class="help-4">
+								Further narrow down your search by choosing a book/page maximum value and or a minimum value.
+							</div>
+							
+							<img class="globe" src="images/globe_200x200.png" alt="Globe" width="200" height="200"/>
+						</div>
+
+						<!-- map tarter -->
+						<div id="map" name="map"></div>
+					</div>
+				</div>
+				
+			<!-- end right column -->
+			</div>
+			
+		<!-- end wrapper -->
+		</div>
+		
+	<!-- Things that need to be done when the page loads -->
+	<script language="javascript" type="text/javascript">		jQuery(window).bind(
+		"beforeunload", 
+			function() { 
+			
+				$.ajax({
+					url:'trackUsers',
+					success:function(){
+						alert("Log out recorded");
+						}
+					});
+				//return confirm("Do you really want to close?") 
+			}
+		);
+		
+		
+		$(function()
+		  {
+			 $("a#toggle").click(function()
+				 {
+					if(!$("#advancedSearch").is(":visible"))	{								
+						$("a#toggle").html("More Options (click to minimize)");
+					}else{
+						$("a#toggle").html("More Options (click to expand)");
+
+					}
+					$("#advancedSearch").slideToggle();
+					
+					return false;
+				 }); 
+		  });
+		
+		(function($) {
+			var allPanels = $('.accordion > dd').hide();
+	
+			$('.accordion > dt > a').click(function() {
+				$(this).parent().next('dd').slideUp();
+				
+				if($(this).parent().next().is(':hidden'))
+				{
+					$(this).parent().next().slideDown();
+				}
+				
+				return false;
+			});
+	
+		})(jQuery);
+	
+		//an array to keep track of the puhpins created by the query
+		var pushpinList = new Array();
+	
+		
+		function townParcelMaps(){
+			var townNumber = (dijit.byId('townParcelMaps').attr('value'))
+			var file = 'MA_' + townNumber;
+			var kmlURL = 'http://commondatastorage.googleapis.com/td01/Parcel%20%26%20Road%20Town-By-Town/'+ townNumber +'.kml'
+			parcelLayerLookup(file,kmlURL);
+	
+		}
+		
+		// load all this last
+		$(document).ready(function() {
+			var button = document.getElementById('subscribe');
+			$(button).live('click', function () {     
+				$('#button').html('<a href="#" class="cssSubmitButton"> </a>');	
+				alert("test2");
+				
+				});
+		
+				$("#download").click(function() {				
+					$('<iframe id="dlBox" name="dlBox" hieght=0px width=0px style="display:none" src="/query?download=yes">').appendTo('body');	
+			});
+		});
+		function hideWetcode(){
+			alert("Does Wetcode need hidden?");
+		}
+		
+		//
+		$( "#progress" ).hide();
+		$( "#banner-results" ).hide();
+		$( "#Pagination" ).hide();
+		//$( "#map" ).hide();
+		$( "#help-wrapper" ).show();
+		
+		
+	</script>
+	
+	<!-- Example Json -->
+	<script type="text/javascript" src="scripts/exampleJson.js"> </script>
+	
+	<!-- Google Earth Plugin Map functions -->
+	<script type="text/javascript" src="scripts/map.js"> </script>
+	<script type="text/javascript" src="scripts/pinMap.js"> </script>
+	<script type="text/javascript" src="scripts/updateMap.js"> </script>
+	
+	<!-- KML objects Possibly reorganize in the future-->
+	<script type="text/javascript" src="scripts/parcelLayerKmlObjects.js"> </script>
+	<script type="text/javascript" src="scripts/roadLayerKmlObjects.js"> </script>
+	<script type="text/javascript" src="scripts/wetlandLayerKmlObjects.js"> </script>	
+	<script type="text/javascript" src="scripts/thematicLayerKmlObjects.js"></script>
+
+	<!-- thematic overlays function for the demo -->
+	<script type="text/javascript" src="scripts/loadThematicOverlays.js"> </script>	
+	
+	<!-- KML related functions -->
+	<script type="text/javascript" src="scripts/parcelLayerLookup.js"> </script>
+	<script type="text/javascript" src="scripts/roadLayerLookup.js"> </script>	
+	<script type="text/javascript" src="scripts/removeParcelLayer.js"> </script>	
+	
+	<!-- Wetlands functions and variable -->
+	<script type="text/javascript" src="scripts/wetlandsLayerLookup.js"> </script>
+	
+	<!-- All the clear KML functions  -->
+	<script type="text/javascript" src="scripts/clearKml.js"> </script>
+	
+	<!-- Load State Related Layers -->
+	<script type="text/javascript" src="scripts/stateLayers.js"> </script>
+	
+	<!-- js files for the county selection drop down -->
+	<script type="text/javascript" src="scripts/stateChange.js"> </script>
+	<script type="text/javascript" src="scripts/countySelection.js"> </script>
+	
+	<!-- Dojo Input Validation files -->
+	<script type="text/javascript" src="scripts/generateAndValidateQueryInputs.js"> </script>
+	
+	<!-- js files for the city selection drop down/ files for when the county drop down value changes-->
+	<script type="text/javascript" src="scripts/countyChange.js"> </script>
+	<script type="text/javascript" src="scripts/loadTowns.js"> </script>
+	
+	<!-- submit button js file -->
+	<script type="text/javascript" src="scripts/submitQuery.js"> </script>
+	
+	<!-- contains print results functions -->
+	<script type="text/javascript" src="scripts/printResults.js"> </script>
+	
+	<!-- Jquery Pagination plugin/ and settings functions for printing results-->
+	<script type="text/javascript" src="scripts/pagination.js"></script>
+	<script type="text/javascript" src="scripts/paginationSettings.js"></script>
+	
+	<!-- Contains update info screen functions -->
+	<script type="text/javascript" src="scripts/updateInfoScreen.js"></script>
+
+	<!-- Radius Search js file -->
+	<script type="text/javascript" src="scripts/radiusSearch.js"></script>
+
+	<!-- BW 130820 disabled -->
+	<script type="text/javascript" src="scripts/layerButtons.js"></script>
+	
+  </body>
+</html>
