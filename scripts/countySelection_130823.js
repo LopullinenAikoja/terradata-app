@@ -1,0 +1,6223 @@
+//
+// This file contains a series of functions that when called will load county values into 
+// the county drop down for the user to choose from.
+//
+//
+
+function countyDropdown(state){
+			if(state == 'CO'){coloradoCounties();}
+			else if(state == 'CT'){connecticutCounties();}
+			else if(state == 'DE'){delawareCounties();}
+			else if(state == 'DC'){districtOfColumbia();}
+			else if(state == 'FL'){floridaCounties();}
+			else if(state == 'GA'){georgiaCounties();}
+			else if(state == 'HI'){hawaiiCounties();}
+			else if(state == 'ID'){idahoCounties();}
+			else if(state == 'KS'){kansasCounties();}
+			else if(state == 'MD'){marylandCounties();}
+			else if(state == 'MA'){massachusettsCounties();}
+			else if(state == 'MT'){montanaCounties();}
+			else if(state == 'NC'){northCarolinaCounties();}
+			else if(state == 'NH'){newHampshireCounties();}
+			else if(state == 'NJ'){newJerseyCounties(); newJerseyLayers();}
+			else if(state == 'NY'){newYorkCounties();}
+			else if(state == 'OH'){ohioCounties();}
+			else if(state == 'OR'){oregonCounties();}
+			else if(state == 'UT'){utahCounties();}
+			else if(state == 'VA'){virginiaCounties();}
+			else if(state == 'VT'){vermontCounties();}
+			else if(state == 'WA'){washingtonCounties();}
+			else if(state == 'WY'){wyomingCounties();}
+			else{
+				alert("STATE:" + state);
+			}
+}
+
+
+
+//
+// Colorado
+//
+
+function coloradoCounties(){
+
+	//clear all previous options if the exist
+	dijit.byId('countySelect').removeOption(dijit.byId('countySelect').getOptions());
+
+	//new options
+	var coloradoCounties = [
+		{
+		label:'Select A County',
+		name:'county',
+		value:''
+		},
+		{
+		label:'Adams',
+		name:'county',
+		value:'Adams'
+		},
+		{
+		label:'Alamosa',
+		name:'county',
+		value:'Alamosa'
+		},
+		{
+		label:'Arapahoe',
+		name:'county',
+		value:'Arapahoe'
+		},
+		{
+		label:'Archuleta',
+		name:'county',
+		value:'Archuleta'
+		},
+		{
+		label:'Baca',
+		name:'county',
+		value:'Baca'
+		},
+		{
+		label:'Bent',
+		name:'county',
+		value:'Bent'
+		},
+		{
+		label:'Boulder',
+		name:'county',
+		value:'Boulder'
+		},
+		{
+		label:'Broomfield',
+		name:'county',
+		value:'Broomfield'
+		},
+		{
+		label:'Chaffee',
+		name:'county',
+		value:'Chaffee'
+		},
+		{
+		label:'Cheyenne',
+		name:'county',
+		value:'Cheyenne'
+		},
+		{
+		label:'Clear Creek',
+		name:'county',
+		value:'ClearCreek'
+		},
+		{
+		label:'Conejos',
+		name:'county',
+		value:'Conejos'
+		},
+		{
+		label:'Costilla',
+		name:'county',
+		value:'Costilla'
+		},
+		{
+		label:'Crowley',
+		name:'county',
+		value:'Crowley'
+		},
+		{
+		label:'Custer',
+		name:'county',
+		value:'Custer'
+		},
+		{
+		label:'Delta',
+		name:'county',
+		value:'Delta'
+		},
+		{
+		label:'Denver',
+		name:'county',
+		value:'Denver'
+		},
+		{
+		label:'Dolores',
+		name:'county',
+		value:'Dolores'
+		},
+		{
+		label:'Douglas',
+		name:'county',
+		value:'Douglas'
+		},
+		{
+		label:'Eagle',
+		name:'county',
+		value:'Eagle'
+		},
+		{
+		label:'El Paso',
+		name:'county',
+		value:'ElPaso'
+		},
+		{
+		label:'Elbert',
+		name:'county',
+		value:'Elbert'
+		},
+		{
+		label:'Fremont',
+		name:'county',
+		value:'Fremont'
+		},
+		{
+		label:'Garfield',
+		name:'county',
+		value:'Garfield'
+		},
+		{
+		label:'Gilpin',
+		name:'county',
+		value:'Gilpin'
+		},
+		{
+		label:'Grand',
+		name:'county',
+		value:'Grand'
+		},
+		{
+		label:'Gunnison',
+		name:'county',
+		value:'Gunnison'
+		},
+		{
+		label:'Hinsdale',
+		name:'county',
+		value:'Hinsdale'
+		},
+		{
+		label:'Huerfano',
+		name:'county',
+		value:'Huerfano'
+		},
+		{
+		label:'Jackson',
+		name:'county',
+		value:'Jackson'
+		},
+		{
+		label:'Jefferson',
+		name:'county',
+		value:'Jefferson'
+		},
+		{
+		label:'Kiowa',
+		name:'county',
+		value:'Kiowa'
+		},
+		{
+		label:'Kit Carson',
+		name:'county',
+		value:'Kit Carson'
+		},
+		{
+		label:'La Plata',
+		name:'county',
+		value:'La Plata'
+		},
+		{
+		label:'Lake',
+		name:'county',
+		value:'Lake'
+		},
+		{
+		label:'Larimer',
+		name:'county',
+		value:'Larimer'
+		},
+		{
+		label:'Las Animas',
+		name:'county',
+		value:'Las Animas'
+		},
+		{
+		label:'Lincoln',
+		name:'county',
+		value:'Lincoln'
+		},
+		{
+		label:'Logan',
+		name:'county',
+		value:'Logan'
+		},
+		{
+		label:'Mesa',
+		name:'county',
+		value:'Mesa'
+		},
+		{
+		label:'Mineral',
+		name:'county',
+		value:'Mineral'
+		},
+		{
+		label:'Moffat',
+		name:'county',
+		value:'Moffat'
+		},
+		{
+		label:'Montezuma',
+		name:'county',
+		value:'Montezuma'
+		},
+		{
+		label:'Montrose',
+		name:'county',
+		value:'Montrose'
+		},
+		{
+		label:'Morgan',
+		name:'county',
+		value:'Morgan'
+		},
+		{
+		label:'Otero',
+		name:'county',
+		value:'Otero'
+		},
+		{
+		label:'Ouray',
+		name:'county',
+		value:'Ouray'
+		},
+		{
+		label:'Park',
+		name:'county',
+		value:'Park'
+		},
+		{
+		label:'Phillips',
+		name:'county',
+		value:'Phillips'
+		},
+		{
+		label:'Pitkin',
+		name:'county',
+		value:'Pitkin'
+		},
+		{
+		label:'Prowers',
+		name:'county',
+		value:'Prowers'
+		},
+		{
+		label:'Pueblo',
+		name:'county',
+		value:'Pueblo'
+		},
+		{
+		label:'Rio Blanco',
+		name:'county',
+		value:'Rio Blanco'
+		},
+		{
+		label:'Rio Grande',
+		name:'county',
+		value:'Rio Grande'
+		},
+		{
+		label:'Routt',
+		name:'county',
+		value:'Routt'
+		},
+		{
+		label:'Saguache',
+		name:'county',
+		value:'Saguache'
+		},
+		{
+		label:'San Juan',
+		name:'county',
+		value:'San Juan'
+		},
+		{
+		label:'San Miguel',
+		name:'county',
+		value:'SanMiguel'
+		},
+		{
+		label:'Sedgwick',
+		name:'county',
+		value:'Sedgwick'
+		},
+		{
+		label:'Summit',
+		name:'county',
+		value:'Summit'
+		},
+		{
+		label:'Teller',
+		name:'county',
+		value:'Teller'
+		},
+		{
+		label:'Washington',
+		name:'county',
+		value:'Washington'
+		},
+		{
+		label:'Weld',
+		name:'county',
+		value:'Weld'
+		},
+		{
+		label:'Yuma',
+		name:'county',
+		value:'Yuma'
+		}
+	];
+	
+	//add new options
+	require(["dojo/ready", "dojo/dom-style", "dijit/registry"], function(ready, domStyle, registry){
+		ready(function(){
+			dijit.byId('countySelect').addOption(coloradoCounties);
+			});
+	});	
+
+}
+
+
+//
+//Connecticut
+//
+function connecticutCounties(){
+
+	//clear all previous options if the exist
+	dijit.byId('countySelect').removeOption(dijit.byId('countySelect').getOptions());
+	
+	//new options
+	var connecticutCounties = [
+		{
+		label:'Select A County',
+		name:'county',
+		value:''
+	},	
+	{
+		label:'Fairfield',
+		name:'county',
+		value:'Fairfield'
+	},	
+	{
+		label:'Hartford',
+		name:'county',
+		value:'Hartford'
+	},		
+	{
+		label:'Litchfield',
+		name:'county',
+		value:'Litchfield'
+	},
+	{
+		label:'Middlesex',
+		name:'county',
+		value:'Middlesex'
+	},
+	{
+		label:'New Haven',
+		name:'county',
+		value:'NewHaven'
+	},
+	{
+		label:'New London',
+		name:'county',
+		value:'NewLondon'
+	},
+	{
+		label:'Tolland',
+		name:'county',
+		value:'Tolland'
+	},
+	{
+		label:'Windham',
+		name:'county',
+		value:'Windham'
+	}
+	];
+	
+	//add new options
+	require(["dojo/ready", "dojo/dom-style", "dijit/registry"], function(ready, domStyle, registry){
+		ready(function(){
+			dijit.byId('countySelect').addOption(connecticutCounties);
+			});
+	});	
+}
+
+//
+//Delaware
+//
+function delawareCounties(){
+	
+	//clear all previous options if the exist
+	dijit.byId('countySelect').removeOption(dijit.byId('countySelect').getOptions());
+	
+	//new options
+	var delawareCounties = [
+		{
+		label:'Select A County',
+		name:'county',
+		value:''
+	},	
+	{
+		label:'Kent',
+		name:'county',
+		value:'Kent'
+	},	
+	{
+		label:'New Castle',
+		name:'county',
+		value:'NewCastle'
+	},		
+	{
+		label:'Sussex',
+		name:'county',
+		value:'Sussex'
+	}
+	];
+	
+	//add new options
+	require(["dojo/ready", "dojo/dom-style", "dijit/registry"], function(ready, domStyle, registry){
+		ready(function(){
+			dijit.byId('countySelect').addOption(delawareCounties);
+			});
+	});	
+}
+
+//
+// District Of Columbia (Washington DC)
+//
+function districtOfColumbia(){
+	//clear all previous options if the exist
+	dijit.byId('countySelect').removeOption(dijit.byId('countySelect').getOptions());
+	
+	
+	//
+	// There are no counties in District Of Columbia
+	//
+	
+	//new options
+	var dcCounties = [
+		{
+		label:'Select A County',
+		name:'county',
+		value:''
+	}
+	];
+	
+	//add new options
+	require(["dojo/ready", "dojo/dom-style", "dijit/registry"], function(ready, domStyle, registry){
+		ready(function(){
+			dijit.byId('countySelect').addOption(dcCounties);
+			});
+	});	
+
+}
+
+//
+// Florida
+//
+function floridaCounties(){
+	
+	//clear all previous options if the exist
+	dijit.byId('countySelect').removeOption(dijit.byId('countySelect').getOptions());
+	
+	//new options
+	var floridaCounties = [
+		{
+		label:'Select A County',
+		name:'county',
+		value:''
+	},	
+	{
+		label:'Alachua',
+		name:'county',
+		value:'Alachua'
+	},	
+	{
+		label:'Baker',
+		name:'county',
+		value:'Baker'
+	},		
+	{
+		label:'Bay',
+		name:'county',
+		value:'Bay'
+	},
+	{
+		label:'Bradford',
+		name:'county',
+		value:'Bradford'
+	},
+	{
+		label:'Brevard',
+		name:'county',
+		value:'Brevard'
+	},
+	{
+		label:'Bay',
+		name:'county',
+		value:'Bay'
+	},
+	{
+		label:'Broward',
+		name:'county',
+		value:'Broward'
+	},
+	{
+		label:'Calhoun',
+		name:'county',
+		value:'Calhoun'
+	},
+	{
+		label:'Charlotte',
+		name:'county',
+		value:'Charlotte'
+	},
+	{
+		label:'Citrus',
+		name:'county',
+		value:'Citrus'
+	},
+	{
+		label:'Clay',
+		name:'county',
+		value:'Clay'
+	},
+	{
+		label:'Collier',
+		name:'county',
+		value:'Collier'
+	},
+	{
+		label:'Columbia',
+		name:'county',
+		value:'Columbia'
+	},
+	{
+		label:'DeSoto',
+		name:'county',
+		value:'DeSoto'
+	},
+	{
+		label:'Dixie',
+		name:'county',
+		value:'Dixie'
+	},
+	{
+		label:'Duval',
+		name:'county',
+		value:'Duval'
+	},
+	{
+		label:'Escambia',
+		name:'county',
+		value:'Escambia'
+	},
+	{
+		label:'Flagler',
+		name:'county',
+		value:'Flagler'
+	},
+	{
+		label:'Escambia',
+		name:'county',
+		value:'Escambia'
+	},
+	{
+		label:'Franklin',
+		name:'county',
+		value:'Franklin'
+	},
+	{
+		label:'Gadsden',
+		name:'county',
+		value:'Gadsden'
+	},
+	{
+		label:'Gilchrist',
+		name:'county',
+		value:'Gilchrist'
+	},
+	{
+		label:'Glades',
+		name:'county',
+		value:'Glades'
+	},
+	{
+		label:'Gulf',
+		name:'county',
+		value:'Gulf'
+	},
+	{
+		label:'Hamilton',
+		name:'county',
+		value:'Hamilton'
+	},
+	{
+		label:'Hardee',
+		name:'county',
+		value:'Hardee'
+	},
+	{
+		label:'Hendry',
+		name:'county',
+		value:'Hendry'
+	},
+	{
+		label:'Hernando',
+		name:'county',
+		value:'Hernando'
+	},
+	{
+		label:'Highlands',
+		name:'county',
+		value:'Highlands'
+	},
+	{
+		label:'Hillsborough',
+		name:'county',
+		value:'Hillsborough'
+	},
+	{
+		label:'Holmes',
+		name:'county',
+		value:'Holmes'
+	},
+	{
+		label:'Indian River',
+		name:'county',
+		value:'IndianRiver'
+	},
+	{
+		label:'Jackson',
+		name:'county',
+		value:'Jackson'
+	},
+	{
+		label:'Jefferson',
+		name:'county',
+		value:'Jefferson'
+	},
+	{
+		label:'Lafayette',
+		name:'county',
+		value:'Lafayeete'
+	},
+	{
+		label:'Lake',
+		name:'county',
+		value:'Lake'
+	},
+	{
+		label:'Lee',
+		name:'county',
+		value:'Lee'
+	},
+	{
+		label:'Leon',
+		name:'county',
+		value:'Leon'
+	},
+	{
+		label:'Levy',
+		name:'county',
+		value:'Levy'
+	},
+	{
+		label:'Liberty',
+		name:'county',
+		value:'Liberty'
+	},
+	{
+		label:'Madison',
+		name:'county',
+		value:'Madison'
+	},
+	{
+		label:'Manatee',
+		name:'county',
+		value:'Manatee'
+	},
+	{
+		label:'Marion',
+		name:'county',
+		value:'Marion'
+	},
+	{
+		label:'Martin',
+		name:'county',
+		value:'Martin'
+	},
+	{
+		label:'Miami-Dade',
+		name:'county',
+		value:'MiamiDade'
+	},
+	{
+		label:'Monroe',
+		name:'county',
+		value:'Monroe'
+	},
+	{
+		label:'Nassau',
+		name:'county',
+		value:'Nassau'
+	},
+	{
+		label:'Okaloosa',
+		name:'county',
+		value:'Okaloosa'
+	},
+	{
+		label:'Okeechobee',
+		name:'county',
+		value:'Okeechobee'
+	},
+	{
+		label:'Orange County',
+		name:'county',
+		value:'OrangeCounty'
+	},
+	{
+		label:'Osceola',
+		name:'county',
+		value:'Osceola'
+	},
+	{
+		label:'Palm Beach',
+		name:'county',
+		value:'PalmBeach'
+	},
+	{
+		label:'Pasco',
+		name:'county',
+		value:'Pasco'
+	},
+	{
+		label:'Pinellas',
+		name:'county',
+		value:'Pinelass'
+	},
+	{
+		label:'Polk',
+		name:'county',
+		value:'Polk'
+	},
+	{
+		label:'Putnam',
+		name:'county',
+		value:'Putnam'
+	},
+	{
+		label:'Saint Johns',
+		name:'county',
+		value:'SaintJohns'
+	},
+	{
+		label:'Saint Lucie',
+		name:'county',
+		value:'SaintLucie'
+	},
+	{
+		label:'Santa Rosa',
+		name:'county',
+		value:'Santa Rosa'
+	},
+	{
+		label:'Sarasota',
+		name:'county',
+		value:'Sarasota'
+	},
+	{
+		label:'Seminole',
+		name:'county',
+		value:'Seminole'
+	},
+	{
+		label:'Sumter',
+		name:'county',
+		value:'Sumter'
+	},
+	{
+		label:'Suwannee',
+		name:'county',
+		value:'Suwannee'
+	},
+	{
+		label:'Taylor',
+		name:'county',
+		value:'Taylor'
+	},
+	{
+		label:'Union',
+		name:'county',
+		value:'Union'
+	},
+	{
+		label:'Volusia',
+		name:'county',
+		value:'Volusia'
+	},
+	{
+		label:'Wakulla',
+		name:'county',
+		value:'Wakulla'
+	},
+	{
+		label:'Walton',
+		name:'county',
+		value:'Walton'
+	},
+	{
+		label:'Washington',
+		name:'county',
+		value:'Washington'
+	}
+	];
+	
+	//add new options
+	require(["dojo/ready", "dojo/dom-style", "dijit/registry"], function(ready, domStyle, registry){
+		ready(function(){
+			dijit.byId('countySelect').addOption(floridaCounties);
+			});
+	});	
+}
+
+
+//
+// Georgia
+//
+function georgiaCounties(){
+	//clear all previous options if the exist
+	dijit.byId('countySelect').removeOption(dijit.byId('countySelect').getOptions());
+	
+	//new options
+	var georgiaCounties = [
+		{
+		label:'Select A County',
+		name:'county',
+		value:''
+	},	
+	{
+		label:'Appling',
+		name:'county',
+		value:'Appling'
+	},	
+	{
+		label:'Atkinson',
+		name:'county',
+		value:'Atkinson'
+	},		
+	{
+		label:'Bacon',
+		name:'county',
+		value:'Bacon'
+	},
+	{
+		label:'Baker',
+		name:'county',
+		value:'Baker'
+	},
+	{
+		label:'Baldwin',
+		name:'county',
+		value:'Baldwin'
+	},
+	{
+		label:'Banks',
+		name:'county',
+		value:'Banks'
+	},
+	{
+		label:'Barrow',
+		name:'county',
+		value:'Barrow'
+	},
+	{
+		label:'Bartow',
+		name:'county',
+		value:'Bartow'
+	},
+	{
+		label:'Ben Hill',
+		name:'county',
+		value:'BenHill'
+	},
+	{
+		label:'Berrien',
+		name:'county',
+		value:'Berrien'
+	},
+	{
+		label:'Bibb',
+		name:'county',
+		value:'Bibb'
+	},	
+	{
+		label:'Bleckley',
+		name:'county',
+		value:'Bleckley'
+	},
+	{
+		label:'Brantley',
+		name:'county',
+		value:'Brantley'
+	},	
+	{
+		label:'Brooks',
+		name:'county',
+		value:'Brooks'
+	},
+	{
+		label:'Bryan',
+		name:'county',
+		value:'Bryan'
+	},
+	{
+		label:'Bulloch',
+		name:'county',
+		value:'Bulloch'
+	},
+	{
+		label:'Burke',
+		name:'county',
+		value:'Burke'
+	},
+	{
+		label:'Butts',
+		name:'county',
+		value:'Butts'
+	},
+	{
+		label:'Calhoun',
+		name:'county',
+		value:'Calhoun'
+	},
+	{
+		label:'Camden',
+		name:'county',
+		value:'Camden'
+	},
+	{
+		label:'Candler',
+		name:'county',
+		value:'Candler'
+	},
+	{
+		label:'Carroll',
+		name:'county',
+		value:'Carroll'
+	},
+	{
+		label:'Catoosa',
+		name:'county',
+		value:'Catoosa'
+	},
+	{
+		label:'Charlton',
+		name:'county',
+		value:'Charlton'
+	},
+	{
+		label:'Chatham',
+		name:'county',
+		value:'Chatham'
+	},
+	{
+		label:'Chattahoochee',
+		name:'county',
+		value:'Chattahoochee'
+	},
+	{
+		label:'Chattooga',
+		name:'county',
+		value:'Chattooga'
+	},
+	{
+		label:'Cherokee',
+		name:'county',
+		value:'Cherokee'
+	},
+	{
+		label:'Clarke',
+		name:'county',
+		value:'Clarke'
+	},
+	{
+		label:'Clayton',
+		name:'county',
+		value:'Clayton'
+	},
+	{
+		label:'Clinch',
+		name:'county',
+		value:'Clinch'
+	},
+	{
+		label:'Cobb',
+		name:'county',
+		value:'Cobb'
+	},
+	{
+		label:'Coffee',
+		name:'county',
+		value:'Coffee'
+	},
+	{
+		label:'Colquitt',
+		name:'county',
+		value:'Colquitt'
+	},
+	{
+		label:'Columbia',
+		name:'county',
+		value:'Columbia'
+	},
+	{
+		label:'Cook',
+		name:'county',
+		value:'Cook'
+	},
+	{
+		label:'Coweta',
+		name:'county',
+		value:'Coweta'
+	},
+	{
+		label:'Crawford',
+		name:'county',
+		value:'Crawford'
+	},
+	{
+		label:'Colquitt',
+		name:'county',
+		value:'Colquitt'
+	},
+	{
+		label:'Crisp',
+		name:'county',
+		value:'Crisp'
+	},	
+	{
+		label:'Dade',
+		name:'county',
+		value:'Dade'
+	},
+	{
+		label:'Dawson',
+		name:'county',
+		value:'Dawson'
+	},
+	{
+		label:'Decatur',
+		name:'county',
+		value:'Decatur'
+	},
+	{
+		label:'DeKalb',
+		name:'county',
+		value:'DeKalb'
+	},
+	{
+		label:'Dodge',
+		name:'county',
+		value:'Dodge'
+	},
+	{
+		label:'Dooly',
+		name:'county',
+		value:'Dooly'
+	},
+	{
+		label:'Dougherty',
+		name:'county',
+		value:'Dougherty'
+	},
+	{
+		label:'Douglas',
+		name:'county',
+		value:'Douglas'
+	},
+	{
+		label:'Colquitt',
+		name:'county',
+		value:'Colquitt'
+	},
+	{
+		label:'Early',
+		name:'county',
+		value:'Early'
+	},
+	{
+		label:'Echols',
+		name:'county',
+		value:'Echols'
+	},
+	{
+		label:'Effingham',
+		name:'county',
+		value:'Effingham'
+	},
+	{
+		label:'Elbert',
+		name:'county',
+		value:'Elbert'
+	},
+	{
+		label:'Emanuel',
+		name:'county',
+		value:'Emanuel'
+	},
+	{
+		label:'Evans',
+		name:'county',
+		value:'Evans'
+	},
+	{
+		label:'Fannin',
+		name:'county',
+		value:'Fannin'
+	},
+	{
+		label:'Fayette',
+		name:'county',
+		value:'Fayette'
+	},
+	{
+		label:'Floyd',
+		name:'county',
+		value:'Floyd'
+	},
+	{
+		label:'Forsyth',
+		name:'county',
+		value:'Forsyth'
+	},
+	{
+		label:'Franklin',
+		name:'county',
+		value:'Franklin'
+	},
+	{
+		label:'Fulton',
+		name:'county',
+		value:'Fulton'
+	},
+	{
+		label:'Gilmer',
+		name:'county',
+		value:'Gilmer'
+	},
+	{
+		label:'Glascock',
+		name:'county',
+		value:'Glascock'
+	},
+	{
+		label:'Gylnn',
+		name:'county',
+		value:'Gylnn'
+	},
+	{
+		label:'Gordon',
+		name:'county',
+		value:'Gordon'
+	},
+	{
+		label:'Grady',
+		name:'county',
+		value:'Grady'
+	},
+	{
+		label:'Greene',
+		name:'county',
+		value:'Greene'
+	},
+	{
+		label:'Gwinnett',
+		name:'county',
+		value:'Gwinnett'
+	},	
+	{
+		label:'Habersham',
+		name:'county',
+		value:'Habersham'
+	},
+	{
+		label:'Hall',
+		name:'county',
+		value:'Hall'
+	},
+	{
+		label:'Haralson',
+		name:'county',
+		value:'Haralson'
+	},
+	{
+		label:'Hancock',
+		name:'county',
+		value:'Hancock'
+	},
+	{
+		label:'Harris',
+		name:'county',
+		value:'Harris'
+	},
+	{
+		label:'Hart',
+		name:'county',
+		value:'Hart'
+	},
+	{
+		label:'Heard',
+		name:'county',
+		value:'Heard'
+	},	
+	{
+		label:'Henry',
+		name:'county',
+		value:'Henry'
+	},
+	{
+		label:'Houston',
+		name:'county',
+		value:'Houston'
+	},
+	{
+		label:'Irwin',
+		name:'county',
+		value:'Irwin'
+	},
+	{
+		label:'Jackson',
+		name:'county',
+		value:'Jackson'
+	},
+	{
+		label:'Jasper',
+		name:'county',
+		value:'Jasper'
+	},
+	{
+		label:'Jeff Davis',
+		name:'county',
+		value:'JeffDavis'
+	},
+	{
+		label:'Jefferson',
+		name:'county',
+		value:'Jefferson'
+	},
+	{
+		label:'Jenkins',
+		name:'county',
+		value:'Jenkins'
+	},
+	{
+		label:'Johnson',
+		name:'county',
+		value:'Johnson'
+	},
+	{
+		label:'Jones',
+		name:'county',
+		value:'Jones'
+	},
+	{
+		label:'Lamar',
+		name:'county',
+		value:'Lamar'
+	},
+	{
+		label:'Lanier',
+		name:'county',
+		value:'Lanier'
+	},
+	{
+		label:'Laurens',
+		name:'county',
+		value:'Laurens'
+	},
+	{
+		label:'Lee',
+		name:'county',
+		value:'Lee'
+	},
+	{
+		label:'Liberty',
+		name:'county',
+		value:'Liberty'
+	},
+	{
+		label:'Licoln',
+		name:'county',
+		value:'Lincoln'
+	},
+	{
+		label:'Long',
+		name:'county',
+		value:'Long'
+	},
+	{
+		label:'Lowndes',
+		name:'county',
+		value:'Lowndes'
+	},
+	{
+		label:'Lumpkin',
+		name:'county',
+		value:'Lumpkin'
+	},
+	{
+		label:'Macon',
+		name:'county',
+		value:'Macon'
+	},
+	{
+		label:'Madison',
+		name:'county',
+		value:'Madison'
+	},
+	{
+		label:'Marion',
+		name:'county',
+		value:'Marion'
+	},
+	{
+		label:'McDuffie',
+		name:'county',
+		value:'McDuffie'
+	},
+	{
+		label:'McIntosh',
+		name:'county',
+		value:'McIntosh'
+	},
+	{
+		label:'Meriwether',
+		name:'county',
+		value:'Meriwether'
+	},	
+	{
+		label:'Miller',
+		name:'county',
+		value:'Miller'
+	},
+	{
+		label:'Mitchell',
+		name:'county',
+		value:'Mitchell'
+	},
+	{
+		label:'Monroe',
+		name:'county',
+		value:'Monroe'
+	},
+	{
+		label:'Mongomery',
+		name:'county',
+		value:'Montgomery'
+	},
+	{
+		label:'Morgan',
+		name:'county',
+		value:'Morgan'
+	},
+	{
+		label:'Murray',
+		name:'county',
+		value:'Murray'
+	},
+	{
+		label:'Muscogee',
+		name:'county',
+		value:'Muscogee'
+	},
+	{
+		label:'Newton',
+		name:'county',
+		value:'Newton'
+	},
+	{
+		label:'Oconee',
+		name:'county',
+		value:'Oconee'
+	},
+	{
+		label:'Ogelthrope',
+		name:'county',
+		value:'Ogelthrope'
+	},
+	{
+		label:'Paulding',
+		name:'county',
+		value:'Paulding'
+	},
+	{
+		label:'Peach',
+		name:'county',
+		value:'Peach'
+	},
+	{
+		label:'Pickens',
+		name:'county',
+		value:'Pickens'
+	},
+	{
+		label:'Pierce',
+		name:'county',
+		value:'Pierce'
+	},
+	{
+		label:'Pike',
+		name:'county',
+		value:'Pike'
+	},
+	{
+		label:'Polk',
+		name:'county',
+		value:'Polk'
+	},
+	{
+		label:'Pulaski',
+		name:'county',
+		value:'Pulaski'
+	},
+	{
+		label:'Putnam',
+		name:'county',
+		value:'Putnam'
+	},
+	{
+		label:'Quitman',
+		name:'county',
+		value:'Quitman'
+	},
+	{
+		label:'Rabun',
+		name:'county',
+		value:'Rabun'
+	},
+	{
+		label:'Randolph',
+		name:'county',
+		value:'Randolph'
+	},
+	{
+		label:'Richmond',
+		name:'county',
+		value:'Richmond'
+	},
+	{
+		label:'Rockdale',
+		name:'county',
+		value:'Rockdale'
+	},
+	{
+		label:'Schley',
+		name:'county',
+		value:'Schley'
+	},
+	{
+		label:'Screven',
+		name:'county',
+		value:'Screven'
+	},
+	{
+		label:'Seminole',
+		name:'county',
+		value:'Seminole'
+	},
+	{
+		label:'Spalding',
+		name:'county',
+		value:'Spalding'
+	},
+	{
+		label:'Stephens',
+		name:'county',
+		value:'Stephens'
+	},
+	{
+		label:'Stewart',
+		name:'county',
+		value:'Stewart'
+	},
+	{
+		label:'Sumter',
+		name:'county',
+		value:'Sumter'
+	},
+	{
+		label:'Talbot',
+		name:'county',
+		value:'Talbot'
+	},
+	{
+		label:'Taliaferro',
+		name:'county',
+		value:'Taliaferro'
+	},
+	{
+		label:'Tattnall',
+		name:'county',
+		value:'Tattnall'
+	},
+	{
+		label:'Taylor',
+		name:'county',
+		value:'Taylor'
+	},
+	{
+		label:'Telfair',
+		name:'county',
+		value:'Telfair'
+	},	
+	{
+		label:'Terrell',
+		name:'county',
+		value:'Terrell'
+	},
+	{
+		label:'Thomas',
+		name:'county',
+		value:'Thomas'
+	},
+	{
+		label:'Tift',
+		name:'county',
+		value:'Tift'
+	},
+	{
+		label:'Toombs',
+		name:'county',
+		value:'Toombs'
+	},
+	{
+		label:'Towns',
+		name:'county',
+		value:'Towns'
+	},
+	{
+		label:'Treutlen',
+		name:'county',
+		value:'Treutlen'
+	},
+	{
+		label:'Troup',
+		name:'county',
+		value:'Troup'
+	},
+	{
+		label:'Turner',
+		name:'county',
+		value:'Turner'
+	},
+	{
+		label:'Twiggs',
+		name:'county',
+		value:'Twiggs'
+	},
+	{
+		label:'Union',
+		name:'county',
+		value:'Union'
+	},
+	{
+		label:'Upson',
+		name:'county',
+		value:'Upson'
+	},
+	{
+		label:'Walker',
+		name:'county',
+		value:'Walker'
+	},
+	{
+		label:'Walton',
+		name:'county',
+		value:'Walton'
+	},
+	{
+		label:'Ware',
+		name:'county',
+		value:'Ware'
+	},
+	{
+		label:'Warren',
+		name:'county',
+		value:'Warren'
+	},
+	{
+		label:'Washington',
+		name:'county',
+		value:'Washington'
+	},
+	{
+		label:'Wayne',
+		name:'county',
+		value:'Wayne'
+	},
+	{
+		label:'Webster',
+		name:'county',
+		value:'Webster'
+	},
+	{
+		label:'Wheeler',
+		name:'county',
+		value:'Wheeler'
+	},
+	{
+		label:'White',
+		name:'county',
+		value:'White'
+	},
+	{
+		label:'Wilcox',
+		name:'county',
+		value:'Wilcox'
+	},
+	{
+		label:'Wilkes',
+		name:'county',
+		value:'Wilkes'
+	},
+	{
+		label:'Wilkinson',
+		name:'county',
+		value:'Wilkinson'
+	},
+	{
+		label:'Worth',
+		name:'county',
+		value:'Worth'
+	}	
+	];
+	
+	//add new options
+	require(["dojo/ready", "dojo/dom-style", "dijit/registry"], function(ready, domStyle, registry){
+		ready(function(){
+			dijit.byId('countySelect').addOption(georgiaCounties);
+			});
+	});	
+}
+
+
+//
+// Hawaii
+//
+function hawaiiCounties(){
+	//clear all previous options if the exist
+	dijit.byId('countySelect').removeOption(dijit.byId('countySelect').getOptions());
+	
+	//new options
+	var hawaiiCounties = [
+		{
+		label:'Select A County',
+		name:'county',
+		value:''
+	},
+	{
+		label:'Kalawao',
+		name:'county',
+		value:'Kalawao'
+	},	
+	{
+		label:'Kauai',
+		name:'county',
+		value:'Kauai'
+	},
+	{
+		label:'Hawaii',
+		name:'county',
+		value:'Hawaii'
+	},
+	{
+		label:'Honolulu',
+		name:'county',
+		value:'Oahu'
+	},	
+	{
+		label:'Maui',
+		name:'county',
+		value:'Maui'
+	}
+	];
+	
+	//add new options
+	require(["dojo/ready", "dojo/dom-style", "dijit/registry"], function(ready, domStyle, registry){
+		ready(function(){
+			dijit.byId('countySelect').addOption(hawaiiCounties);
+			});
+	});	
+
+}
+
+//
+// Idaho
+//
+function idahoCounties(){
+	//clear all previous options if the exist
+	dijit.byId('countySelect').removeOption(dijit.byId('countySelect').getOptions());
+	
+	//new options
+	var idahoCounties = [
+		{
+		label:'Select A County',
+		name:'county',
+		value:''
+	},	
+	{
+	label:'Ada',
+	name:'county',
+	value:'Ada'
+	},
+	{
+	label:'Adams',
+	name:'county',
+	value:'Adams'
+	},
+	{
+	label:'Bannock',
+	name:'county',
+	value:'Bannock'
+	},
+	{
+	label:'Bear Lake',
+	name:'county',
+	value:'Bear Lake'
+	},
+	{
+	label:'Benewah',
+	name:'county',
+	value:'Benewah'
+	},
+	{
+	label:'Bingham',
+	name:'county',
+	value:'Bingham'
+	},
+	{
+	label:'Blaine',
+	name:'county',
+	value:'Blaine'
+	},
+	{
+	label:'Boise',
+	name:'county',
+	value:'Boise'
+	},
+	{
+	label:'Bonner',
+	name:'county',
+	value:'Bonner'
+	},
+	{
+	label:'Bonneville',
+	name:'county',
+	value:'Bonneville'
+	},
+	{
+	label:'Boundary',
+	name:'county',
+	value:'Boundary'
+	},
+	{
+	label:'Butte',
+	name:'county',
+	value:'Butte'
+	},
+	{
+	label:'Camas',
+	name:'county',
+	value:'Camas'
+	},
+	{
+	label:'Canyon',
+	name:'county',
+	value:'Canyon'
+	},
+	{
+	label:'Caribou',
+	name:'county',
+	value:'Caribou'
+	},
+	{
+	label:'Cassia',
+	name:'county',
+	value:'Cassia'
+	},
+	{
+	label:'Clark',
+	name:'county',
+	value:'Clark'
+	},
+	{
+	label:'Clearwater',
+	name:'county',
+	value:'Clearwater'
+	},
+	{
+	label:'Custer',
+	name:'county',
+	value:'Custer'
+	},
+	{
+	label:'Elmore',
+	name:'county',
+	value:'Elmore'
+	},
+	{
+	label:'Franklin',
+	name:'county',
+	value:'Franklin'
+	},
+	{
+	label:'Fremont',
+	name:'county',
+	value:'Fremont'
+	},
+	{
+	label:'Gem',
+	name:'county',
+	value:'Gem'
+	},
+	{
+	label:'Gooding',
+	name:'county',
+	value:'Gooding'
+	},
+	{
+	label:'Idaho',
+	name:'county',
+	value:'Idaho'
+	},
+	{
+	label:'Jefferson',
+	name:'county',
+	value:'Jefferson'
+	},
+	{
+	label:'Jerome',
+	name:'county',
+	value:'Jerome'
+	},
+	{
+	label:'Kootenai',
+	name:'county',
+	value:'Kootenai'
+	},
+	{
+	label:'Latah',
+	name:'county',
+	value:'Latah'
+	},
+	{
+	label:'Lemhi',
+	name:'county',
+	value:'Lemhi'
+	},
+	{
+	label:'Lewis',
+	name:'county',
+	value:'Lewis'
+	},
+	{
+	label:'Lincoln',
+	name:'county',
+	value:'Lincoln'
+	},
+	{
+	label:'Madison',
+	name:'county',
+	value:'Madison'
+	},
+	{
+	label:'Minidoka',
+	name:'county',
+	value:'Minidoka'
+	},
+	{
+	label:'Nez Perce',
+	name:'county',
+	value:'Nez Perce'
+	},
+	{
+	label:'Oneida',
+	name:'county',
+	value:'Oneida'
+	},
+	{
+	label:'Owyhee',
+	name:'county',
+	value:'Owyhee'
+	},
+	{
+	label:'Payette',
+	name:'county',
+	value:'Payette'
+	},
+	{
+	label:'Power',
+	name:'county',
+	value:'Power'
+	},
+	{
+	label:'Shoshone',
+	name:'county',
+	value:'Shoshone'
+	},
+	{
+	label:'Teton',
+	name:'county',
+	value:'Teton'
+	},
+	{
+	label:'Twin Falls',
+	name:'county',
+	value:'Twin Falls'
+	},
+	{
+	label:'Valley',
+	name:'county',
+	value:'Valley'
+	},
+	{
+	label:'Washington',
+	name:'county',
+	value:'Washington'
+	}
+	];
+	
+	//add new options
+	require(["dojo/ready", "dojo/dom-style", "dijit/registry"], function(ready, domStyle, registry){
+		ready(function(){
+			dijit.byId('countySelect').addOption(idahoCounties);
+			});
+	});	
+
+}
+//
+// Kansas
+//
+function kansasCounties(){
+	//clear all previous options if the exist
+	dijit.byId('countySelect').removeOption(dijit.byId('countySelect').getOptions());
+	
+	//new options
+	var kansasCounties = [
+		{
+		label:'Select A County',
+		name:'county',
+		value:''
+	},	
+	{
+		label:'Allen',
+		name:'county',
+		value:'Allen'
+	},	
+	{
+		label:'Anderson',
+		name:'county',
+		value:'Anderson'
+	},		
+	{
+		label:'Atchison',
+		name:'county',
+		value:'Atchison'
+	},
+	{
+		label:'Barber',
+		name:'county',
+		value:'Barber'
+	},
+	{
+		label:'Barton',
+		name:'county',
+		value:'Barton'
+	},
+	{
+		label:'Bourbon',
+		name:'county',
+		value:'Bourbon'
+	},
+	{
+		label:'Brown',
+		name:'county',
+		value:'Brown'
+	},
+	{
+		label:'Butler',
+		name:'county',
+		value:'Butler'
+	},
+	{
+		label:'Chase',
+		name:'county',
+		value:'Chase'
+	},
+	{
+		label:'Chautauqua',
+		name:'county',
+		value:'Chautauqua'
+	},
+	{
+		label:'Cherokee',
+		name:'county',
+		value:'Cherokee'
+	},	
+	{
+		label:'Clark',
+		name:'county',
+		value:'Clark'
+	},
+	{
+		label:'Clay',
+		name:'county',
+		value:'Clay'
+	},	
+	{
+		label:'Cloud',
+		name:'county',
+		value:'Cloud'
+	},
+	{
+		label:'Coffey',
+		name:'county',
+		value:'Coffey'
+	},
+	{
+		label:'Comanche',
+		name:'county',
+		value:'Comanche'
+	},
+	{
+		label:'Cowley',
+		name:'county',
+		value:'Cowley'
+	},
+	{
+		label:'Crawford',
+		name:'county',
+		value:'Crawford'
+	},
+	{
+		label:'Decatur',
+		name:'county',
+		value:'Decatur'
+	},
+	{
+		label:'Dickinson',
+		name:'county',
+		value:'Dickinson'
+	},
+	{
+		label:'Doniphan',
+		name:'county',
+		value:'Doniphan'
+	},
+	{
+		label:'Douglas',
+		name:'county',
+		value:'Douglas'
+	},
+	{
+		label:'Edwards',
+		name:'county',
+		value:'Edwards'
+	},
+	{
+		label:'Elk',
+		name:'county',
+		value:'Elk'
+	},
+	{
+		label:'Ellis',
+		name:'county',
+		value:'Ellis'
+	},
+	{
+		label:'Ellsworth',
+		name:'county',
+		value:'Ellsworth'
+	},
+	{
+		label:'Finney',
+		name:'county',
+		value:'Finney'
+	},
+	{
+		label:'Ford',
+		name:'county',
+		value:'Ford'
+	},
+	{
+		label:'Franklin',
+		name:'county',
+		value:'Franklin'
+	},
+	{
+		label:'Geary',
+		name:'county',
+		value:'Geary'
+	},
+	{
+		label:'Gove',
+		name:'county',
+		value:'Gove'
+	},
+	{
+		label:'Cobb',
+		name:'county',
+		value:'Cobb'
+	},
+	{
+		label:'Graham',
+		name:'county',
+		value:'Graham'
+	},
+	{
+		label:'Grant',
+		name:'county',
+		value:'Grant'
+	},
+	{
+		label:'Gray',
+		name:'county',
+		value:'Gray'
+	},
+	{
+		label:'Greeley',
+		name:'county',
+		value:'Greeley'
+	},
+	{
+		label:'Greenwood',
+		name:'county',
+		value:'Greenwood'
+	},
+	{
+		label:'Hamilton',
+		name:'county',
+		value:'Hamilton'
+	},
+	{
+		label:'Harper',
+		name:'county',
+		value:'Harper'
+	},
+	{
+		label:'Harvey',
+		name:'county',
+		value:'Harvey'
+	},	
+	{
+		label:'Haskell',
+		name:'county',
+		value:'Haskell'
+	},
+	{
+		label:'Hodgeman',
+		name:'county',
+		value:'Hodgeman'
+	},
+	{
+		label:'Jackson',
+		name:'county',
+		value:'Jackson'
+	},
+	{
+		label:'Jefferson',
+		name:'county',
+		value:'Jefferson'
+	},
+	{
+		label:'Jewell',
+		name:'county',
+		value:'Jewell'
+	},
+	{
+		label:'Johnson',
+		name:'county',
+		value:'Johnson'
+	},
+	{
+		label:'Kearny',
+		name:'county',
+		value:'Kearny'
+	},
+	{
+		label:'Kingman',
+		name:'county',
+		value:'Kingman'
+	},
+	{
+		label:'Kiowa',
+		name:'county',
+		value:'Kiowa'
+	},
+	{
+		label:'Labette',
+		name:'county',
+		value:'Labette'
+	},
+	{
+		label:'Lane',
+		name:'county',
+		value:'Lane'
+	},
+	{
+		label:'Leavenworth',
+		name:'county',
+		value:'Leavenworth'
+	},
+	{
+		label:'Lincoln',
+		name:'county',
+		value:'Lincoln'
+	},
+	{
+		label:'Linn',
+		name:'county',
+		value:'Linn'
+	},
+	{
+		label:'Logan',
+		name:'county',
+		value:'Logan'
+	},
+	{
+		label:'Lyon',
+		name:'county',
+		value:'Lyon'
+	},
+	{
+		label:'Marion',
+		name:'county',
+		value:'Marion'
+	},
+	{
+		label:'Marshall',
+		name:'county',
+		value:'Marshall'
+	},
+	{
+		label:'McPherson',
+		name:'county',
+		value:'McPherson'
+	},
+	{
+		label:'Meade',
+		name:'county',
+		value:'Meade'
+	},
+	{
+		label:'Miami',
+		name:'county',
+		value:'Miami'
+	},
+	{
+		label:'Mitchell',
+		name:'county',
+		value:'Mitchell'
+	},
+	{
+		label:'Montgomery',
+		name:'county',
+		value:'Montgomery'
+	},
+	{
+		label:'Morris',
+		name:'county',
+		value:'Morris'
+	},
+	{
+		label:'Morton',
+		name:'county',
+		value:'Morton'
+	},
+	{
+		label:'Nemaha',
+		name:'county',
+		value:'Nemaha'
+	},
+	{
+		label:'Ness',
+		name:'county',
+		value:'Ness'
+	},
+	{
+		label:'Norton',
+		name:'county',
+		value:'Norton'
+	},	
+	{
+		label:'Osage',
+		name:'county',
+		value:'Osage'
+	},
+	{
+		label:'Osborne',
+		name:'county',
+		value:'Osborne'
+	},
+	{
+		label:'Ottawa',
+		name:'county',
+		value:'Ottawa'
+	},
+	{
+		label:'Pawnee',
+		name:'county',
+		value:'Pawnee'
+	},
+	{
+		label:'Phillips',
+		name:'county',
+		value:'Phillips'
+	},
+	{
+		label:'Pottawtomie',
+		name:'county',
+		value:'Pottawtomie'
+	},
+	{
+		label:'Pratt',
+		name:'county',
+		value:'Pratt'
+	},	
+	{
+		label:'Reno',
+		name:'county',
+		value:'Reno'
+	},
+	{
+		label:'Republic',
+		name:'county',
+		value:'Republic'
+	},
+	{
+		label:'Rice',
+		name:'county',
+		value:'Rice'
+	},
+	{
+		label:'Riley',
+		name:'county',
+		value:'Riley'
+	},
+	{
+		label:'Rooks',
+		name:'county',
+		value:'Rooks'
+	},
+	{
+		label:'Rush',
+		name:'county',
+		value:'Rush'
+	},
+	{
+		label:'Russell',
+		name:'county',
+		value:'Russell'
+	},
+	{
+		label:'Saline',
+		name:'county',
+		value:'Saline'
+	},
+	{
+		label:'Scott',
+		name:'county',
+		value:'Scott'
+	},
+	{
+		label:'Sedgwick',
+		name:'county',
+		value:'Wedgwick'
+	},
+	{
+		label:'Seward',
+		name:'county',
+		value:'Seward'
+	},
+	{
+		label:'Shawnee',
+		name:'county',
+		value:'Shawnee'
+	},
+	{
+		label:'Sheridan',
+		name:'county',
+		value:'Sheridan'
+	},
+	{
+		label:'Sherman',
+		name:'county',
+		value:'Sherman'
+	},
+	{
+		label:'Smith',
+		name:'county',
+		value:'Smith'
+	},
+	{
+		label:'Stafford',
+		name:'county',
+		value:'Stafford'
+	},
+	{
+		label:'Stanton',
+		name:'county',
+		value:'Stanton'
+	},
+	{
+		label:'Stevens',
+		name:'county',
+		value:'Stevens'
+	},
+	{
+		label:'Sumner',
+		name:'county',
+		value:'Sumner'
+	},
+	{
+		label:'Thomas',
+		name:'county',
+		value:'Thomas'
+	},
+	{
+		label:'Trego',
+		name:'county',
+		value:'Trego'
+	},
+	{
+		label:'Wabaunsee',
+		name:'county',
+		value:'Wabaunsee'
+	},
+	{
+		label:'Wallace',
+		name:'county',
+		value:'Wallace'
+	},
+	{
+		label:'Washinton',
+		name:'county',
+		value:'Washington'
+	},
+	{
+		label:'Wichita',
+		name:'county',
+		value:'Wichita'
+	},	
+	{
+		label:'Wilson',
+		name:'county',
+		value:'Wilson'
+	},
+	{
+		label:'Woodson',
+		name:'county',
+		value:'Woodson'
+	},
+	{
+		label:'Wyandotte',
+		name:'county',
+		value:'Wyandotte'
+	}
+	];
+	
+	//add new options
+	require(["dojo/ready", "dojo/dom-style", "dijit/registry"], function(ready, domStyle, registry){
+		ready(function(){
+			dijit.byId('countySelect').addOption(kansasCounties);
+			});
+	});	
+}
+
+//
+// Maine
+//
+function maineCounties(){
+	//clear all previous options if the exist
+	dijit.byId('countySelect').removeOption(dijit.byId('countySelect').getOptions());
+	
+	//new options
+	var maineCounties = [
+		{
+		label:'Select A County',
+		name:'county',
+		value:''
+	},	
+	{
+		label:'Androscoggin',
+		name:'county',
+		value:'Androscoggin'
+	},	
+	{
+		label:'Aroostook',
+		name:'county',
+		value:'Aroostook'
+	},		
+	{
+		label:'Cumberland',
+		name:'county',
+		value:'Cumberland'
+	},
+	{
+		label:'Franklin',
+		name:'county',
+		value:'Franklin'
+	},
+	{
+		label:'Hancock',
+		name:'county',
+		value:'Hancock'
+	},
+	{
+		label:'Kennebec',
+		name:'county',
+		value:'Kennebec'
+	},
+	{
+		label:'Knox',
+		name:'county',
+		value:'Knox'
+	},
+	{
+		label:'Lincoln',
+		name:'county',
+		value:'Lincoln'
+	},
+	{
+		label:'Oxford',
+		name:'county',
+		value:'Oxford'
+	},
+	{
+		label:'Penobscot',
+		name:'county',
+		value:'Penobscot'
+	},
+	{
+		label:'Piscataquis',
+		name:'county',
+		value:'Piscataquis'
+	},
+	{
+		label:'Sagadhoc',
+		name:'county',
+		value:'Sagadahoc'
+	},
+	{
+		label:'Somerset',
+		name:'county',
+		value:'Somerset'
+	},
+	{
+		label:'Waldo',
+		name:'county',
+		value:'Waldo'
+	},
+	{
+		label:'Washington',
+		name:'county',
+		value:'Washington'
+	},
+	{
+		label:'York',
+		name:'county',
+		value:'York'
+	}		
+	];
+	
+	//add new options
+	require(["dojo/ready", "dojo/dom-style", "dijit/registry"], function(ready, domStyle, registry){
+		ready(function(){
+			dijit.byId('countySelect').addOption(maineCounties);
+			});
+	});	
+}
+
+
+//
+// Maryland
+//
+function marylandCounties(){
+	//clear all previous options if the exist
+	dijit.byId('countySelect').removeOption(dijit.byId('countySelect').getOptions());
+	
+	//new options
+	var marylandCounties = [
+		{
+		label:'Select A County',
+		name:'county',
+		value:''
+	},	
+	{
+		label:'Allegany',
+		name:'county',
+		value:'Allegany'
+	},	
+	{
+		label:'Anne Arundel',
+		name:'county',
+		value:'AnneArundel'
+	},		
+	{
+		label:'Baltimore',
+		name:'county',
+		value:'Baltimore'
+	},
+	{
+		label:'Calvert',
+		name:'county',
+		value:'Calvert'
+	},
+	{
+		label:'Caroline',
+		name:'county',
+		value:'Caroline'
+	},
+	{
+		label:'Carroll',
+		name:'county',
+		value:'Carroll'
+	},
+	{
+		label:'Cecil',
+		name:'county',
+		value:'Cecil'
+	},
+	{
+		label:'Charles',
+		name:'county',
+		value:'Charles'
+	},
+	{
+		label:'Dorchester',
+		name:'county',
+		value:'Dorchester'
+	},
+	{
+		label:'Frederick',
+		name:'county',
+		value:'Frederick'
+	},
+	{
+		label:'Garrett',
+		name:'county',
+		value:'Garrett'
+	},
+	{
+		label:'Harford',
+		name:'county',
+		value:'Harford'
+	},
+	{
+		label:'Howard',
+		name:'county',
+		value:'Howard'
+	},
+	{
+		label:'Kent',
+		name:'county',
+		value:'Kent'
+	},
+	{
+		label:'Montgomery',
+		name:'county',
+		value:'Montgomery'
+	},
+	{
+		label:"Prince George's",
+		name:'county',
+		value:'PrinceGeorges'
+	},
+	{
+		label:"Saint Mary's",
+		name:'county',
+		value:'SaintMarys'
+	},
+	{
+		label:'Somerset',
+		name:'county',
+		value:'Somerset'
+	},
+	{
+		label:'Talbot',
+		name:'county',
+		value:'Talbot'
+	},
+	{
+		label:'Washington',
+		name:'county',
+		value:'Washington'
+	},
+	{
+		label:'Wicomico',
+		name:'county',
+		value:'Wicomico'
+	},
+	{
+		label:'Worcester',
+		name:'county',
+		value:'Worcester'
+	}	
+	];
+	
+	//add new options
+	require(["dojo/ready", "dojo/dom-style", "dijit/registry"], function(ready, domStyle, registry){
+		ready(function(){
+			dijit.byId('countySelect').addOption(marylandCounties);
+			});
+	});	
+}
+
+
+//
+// Massachusetts 
+//
+
+function massachusettsCounties(){
+
+	//clear all previous options if the exist
+	dijit.byId('countySelect').removeOption(dijit.byId('countySelect').getOptions());
+	
+	//new options
+	var massCounties = [
+	{
+		label:'Select A County',
+		name:'county',
+		value:''
+	},	
+	{
+		label:'Barnstable',
+		name:'county',
+		value:'Barnstable'
+	},
+	{
+		label:'Berkshire',
+		name:'county',
+		value:'Berkshire'
+	},
+	{
+		label:'Bristol',
+		name:'county',
+		value:'Bristol'
+	},
+	{
+		label:'Dukes',
+		name:'county',
+		value:'Dukes'
+	},
+	{
+		label:'Essex',
+		name:'county',
+		value:'Essex'
+	},
+	{
+		label:'Franklin',
+		name:'county',
+		value:'Franklin'
+	},
+	{
+		label:'Hampden',
+		name:'county',
+		value:'Hampden'
+	},
+	{
+		label:'Hampshire',
+		name:'county',
+		value:'Hampshire'
+	},
+	{
+		label:'Middlesex',
+		name:'county',
+		value:'Middlesex'
+	},
+	{
+		label:'Nantucket',
+		name:'county',
+		value:'Nantucket'
+	},
+	{
+		label:'Norfolk',
+		name:'county',
+		value:'Norfolk'
+	},
+	{
+		label:'Plymouth',
+		name:'county',
+		value:'Plymouth'
+	},
+	{
+		label:'Suffolk',
+		name:'county',
+		value:'Suffolk'
+	},
+	{
+		label:'Worcester',
+		name:'county',
+		value:'Worcester'
+	}
+	];
+	
+	//add new options
+	require(["dojo/ready", "dojo/dom-style", "dijit/registry"], function(ready, domStyle, registry){
+		ready(function(){
+			dijit.byId('countySelect').addOption(massCounties);
+			});
+	});	
+	
+}
+
+
+
+//
+// Montana
+//
+
+function montanaCounties(){
+	//clear all previous options if the exist
+	dijit.byId('countySelect').removeOption(dijit.byId('countySelect').getOptions());
+
+	var montanaCounties= [
+			{
+		label:'Select A County',
+		name:'county',
+		value:''
+	},
+{
+label:'Beaverhead',
+name:'county',
+value:'18'
+},
+{
+label:'Blaine',
+name:'county',
+value:'24'
+},
+{
+label:'Big Horn',
+name:'county',
+value:'22'
+},
+{
+label:'Broadwater',
+name:'county',
+value:'43'
+},
+{
+label:'Carbon',
+name:'county',
+value:'10'
+},
+{
+label:'Carter',
+name:'county',
+value:'42'
+},
+{
+label:'Cascade',
+name:'county',
+value:'2'
+},
+{
+label:'Chouteau',
+name:'county',
+value:'19'
+},
+{
+label:'Custer',
+name:'county',
+value:'14'
+},
+{
+label:'Daniels',
+name:'county',
+value:'37'
+},
+{
+label:'Dawson',
+name:'county',
+value:'16'
+},
+{
+label:'Deer Lodge',
+name:'county',
+value:'30'
+},
+{
+label:'Fergus',
+name:'county',
+value:'8'
+},
+{
+label:'Flathead',
+name:'county',
+value:'7'
+},
+{
+label:'Gallatin',
+name:'county',
+value:'6'
+},
+{
+label:'Garfield',
+name:'county',
+value:'50'
+},
+{
+label:'Glacier',
+name:'county',
+value:'38'
+},
+{
+label:'Golden Valley',
+name:'county',
+value:'53'
+},
+{
+label:'Granite',
+name:'county',
+value:'46'
+},
+{
+label:'Hill',
+name:'county',
+value:'12'
+},
+{
+label:'Jefferson',
+name:'county',
+value:'51'
+},
+{
+label:'Judith Basin',
+name:'county',
+value:'36'
+},
+{
+label:'Lake',
+name:'county',
+value:'15'
+},
+{
+label:'Lewis & Clark',
+name:'county',
+value:'5'
+},
+{
+label:'Liberty',
+name:'county',
+value:'48'
+},
+{
+label:'Lincoln',
+name:'county',
+value:'56'
+},
+{
+label:'Meagher',
+name:'county',
+value:'47'
+},
+{
+label:'Mineral',
+name:'county',
+value:'54'
+},
+{
+label:'Madison',
+name:'county',
+value:'25'
+},
+{
+label:'McCone',
+name:'county',
+value:'41'
+},
+{
+label:'Missoula',
+name:'county',
+value:'4'
+},
+
+{
+label:'Musselshell',
+name:'county',
+value:'23'
+},
+{
+label:'Park',
+name:'county',
+value:'49'
+},
+{
+label:'Petroleum',
+name:'county',
+value:'55'
+},
+{
+label:'Pondera',
+name:'county',
+value:'26'
+},
+{
+label:'Phillips',
+name:'county',
+value:'11'
+},
+{
+label:'Powder River',
+name:'county',
+value:'9'
+},
+{
+label:'Powell',
+name:'county',
+value:'28'
+},
+{
+label:'Prairie',
+name:'county',
+value:'45'
+},
+{
+label:'Ravalli',
+name:'county',
+value:'13'
+},
+{
+label:'Richland',
+name:'county',
+value:'27'
+},
+{
+label:'Rosebud',
+name:'county',
+value:'29'
+},
+{
+label:'Roosevelt',
+name:'county',
+value:'17'
+},
+{
+label:'Sanders',
+name:'county',
+value:'35'
+},
+{
+label:'Sheridan',
+name:'county',
+value:'34'
+},
+{
+label:'Silver Bow',
+name:'county',
+value:'1'
+},
+{
+label:'Stillwater',
+name:'county',
+value:'32'
+},
+{
+label:'Sweet Grass',
+name:'county',
+value:'40'
+},
+{
+label:'Teton',
+name:'county',
+value:'31'
+},
+{
+label:'Toole',
+name:'county',
+value:'21'
+},
+{
+label:'Treasure',
+name:'county',
+value:'33'
+},
+{
+label:'Wheatland',
+name:'county',
+value:'44'
+},
+{
+label:'Wibaux',
+name:'county',
+value:'52'
+},
+{
+label:'Yellowstone',
+name:'county',
+value:'3'
+}
+];
+//add new options
+require(["dojo/ready", "dojo/dom-style", "dijit/registry"], function(ready, domStyle, registry){
+ready(function(){
+dijit.byId('countySelect').addOption(montanaCounties);
+});
+});
+}
+
+//
+// New Hampshire
+//
+function newHampshireCounties(){
+	
+	//clear all previous options if the exist
+	dijit.byId('countySelect').removeOption(dijit.byId('countySelect').getOptions());
+	
+	//new options
+	var newHampshireCounties = [
+		{
+		label:'Select A County',
+		name:'county',
+		value:''
+	},	
+	{
+		label:'Belknap',
+		name:'county',
+		value:'Belknap'
+	},	
+	{
+		label:'Carroll',
+		name:'county',
+		value:'Carroll'
+	},	
+	{
+		label:'Cheshire',
+		name:'county',
+		value:'Cheshire'
+	},	
+	{
+		label:'Coos',
+		name:'county',
+		value:'Coos'
+	},		
+	{
+		label:'Grafton',
+		name:'county',
+		value:'Grafton'
+	},	
+	{
+		label:'Hillsborough',
+		name:'county',
+		value:'Hillsborough'
+	},	
+	{
+		label:'Merrimack',
+		name:'county',
+		value:'Merrimack'
+	},	
+	{
+		label:'Rockingham',
+		name:'county',
+		value:'Rockingham'
+	},	
+	{
+		label:'Strafford',
+		name:'county',
+		value:'Strafford'
+	},	
+	{
+		label:'Sullivan',
+		name:'county',
+		value:'Sullivan'
+	}
+	];
+	
+	//add new options
+	require(["dojo/ready", "dojo/dom-style", "dijit/registry"], function(ready, domStyle, registry){
+		ready(function(){
+			dijit.byId('countySelect').addOption(newHampshireCounties);
+			});
+	});	
+}
+
+
+//
+// New Jersey
+//
+
+function newJerseyCounties(){
+	
+	//clear all previous options if the exist
+	dijit.byId('countySelect').removeOption(dijit.byId('countySelect').getOptions());
+	
+	//new options
+	var newJerseyCounties = [
+		{
+		label:'Select A County',
+		name:'county',
+		value:''
+	},	
+	{
+		label:'Atlantic',
+		name:'county',
+		value:'Atlantic'
+	},	
+	{
+		label:'Bergen',
+		name:'county',
+		value:'Bergen'
+	},	
+	{
+		label:'Burlington',
+		name:'county',
+		value:'Burlington'
+	},	
+	{
+		label:'Camden',
+		name:'county',
+		value:'Camden'
+	},		
+	{
+		label:'Cape May',
+		name:'county',
+		value:'CapeMay'
+	},	
+	{
+		label:'Cumberland',
+		name:'county',
+		value:'Cumberland'
+	},	
+	{
+		label:'Essex',
+		name:'county',
+		value:'Essex'
+	},	
+	{
+		label:'Gloucester',
+		name:'county',
+		value:'Gloucester'
+	},	
+	{
+		label:'Hudson',
+		name:'county',
+		value:'Hudson'
+	},	
+	{
+		label:'Hunterdon',
+		name:'county',
+		value:'Hunterdon'
+	},	
+	{
+		label:'Mercer',
+		name:'county',
+		value:'Mercer'
+	},	
+	{
+		label:'Middlesex',
+		name:'county',
+		value:'Middlesex'
+	},	
+	{
+		label:'Monmouth',
+		name:'county',
+		value:'Monmouth'
+	},	
+	{
+		label:'Morris',
+		name:'county',
+		value:'Morris'
+	},	
+	{
+		label:'Ocean',
+		name:'county',
+		value:'Ocean'
+	},	
+	{
+		label:'Passaic',
+		name:'county',
+		value:'Passaic'
+	},	
+	{
+		label:'Salem',
+		name:'county',
+		value:'Salem'
+	},	
+	{
+		label:'Somerset',
+		name:'county',
+		value:'Somerset'
+	},		
+	{
+		label:'Sussex',
+		name:'county',
+		value:'Sussex'
+	},	
+	{
+		label:'Union',
+		name:'county',
+		value:'Union'
+	},	
+	{
+		label:'Warren',
+		name:'county',
+		value:'Warren'
+	}
+	];
+	
+	//add new options
+	require(["dojo/ready", "dojo/dom-style", "dijit/registry"], function(ready, domStyle, registry){
+		ready(function(){
+			dijit.byId('countySelect').addOption(newJerseyCounties);
+			});
+	});	
+}
+
+
+//
+// New York
+//
+
+function newYorkCounties(){
+	
+	//clear all previous options if the exist
+	dijit.byId('countySelect').removeOption(dijit.byId('countySelect').getOptions());
+	
+	//new options
+	var newYorkCounties = [
+		{
+		label:'Select A County',
+		name:'county',
+		value:''
+	},	
+	{
+		label:'Albany',
+		name:'county',
+		value:'Albany'
+	},	
+	{
+		label:'Allegany',
+		name:'county',
+		value:'Allegany'
+	},	
+	{
+		label:'Bronx',
+		name:'county',
+		value:'Bronx'
+	},	
+	{
+		label:'Broome',
+		name:'county',
+		value:'Broome'
+	},		
+	{
+		label:'Cattaraugus',
+		name:'county',
+		value:'Cattaraugus'
+	},	
+	{
+		label:'Cayuga',
+		name:'county',
+		value:'Cayuga'
+	},	
+	{
+		label:'Chautauqua',
+		name:'county',
+		value:'Chautauqua'
+	},	
+	{
+		label:'Chemung',
+		name:'county',
+		value:'Chemung'
+	},	
+	{
+		label:'Chenango',
+		name:'county',
+		value:'Chenango'
+	},	
+	{
+		label:'Clinton',
+		name:'county',
+		value:'Clinton'
+	},	
+	{
+		label:'Columbia',
+		name:'county',
+		value:'Columbia'
+	},	
+	{
+		label:'Cortland',
+		name:'county',
+		value:'Cortland'
+	},	
+	{
+		label:'Delaware',
+		name:'county',
+		value:'Delaware'
+	},	
+	{
+		label:'Dutchess',
+		name:'county',
+		value:'Dutchess'
+	},	
+	{
+		label:'Erie',
+		name:'county',
+		value:'Erie'
+	},	
+	{
+		label:'Essex',
+		name:'county',
+		value:'Essex'
+	},	
+	{
+		label:'Franklin',
+		name:'county',
+		value:'Franklin'
+	},	
+	{
+		label:'Fulton',
+		name:'county',
+		value:'Fulton'
+	},		
+	{
+		label:'Genesee',
+		name:'county',
+		value:'Genesee'
+	},	
+	{
+		label:'Greene',
+		name:'county',
+		value:'Greene'
+	},	
+	{
+		label:'Hamilton',
+		name:'county',
+		value:'Hamilton'
+	},
+	{
+		label:'Herkimer',
+		name:'county',
+		value:'Herkimer'
+	},
+	{
+		label:'Jefferson',
+		name:'county',
+		value:'Jefferson'
+	},
+	{
+		label:'Kings',
+		name:'county',
+		value:'Kings'
+	},
+	{
+		label:'Lewis',
+		name:'county',
+		value:'Lewis'
+	},
+	{
+		label:'Livingston',
+		name:'county',
+		value:'Livingston'
+	},
+	{
+		label:'Madison',
+		name:'county',
+		value:'Madison'
+	},
+	{
+		label:'Monroe',
+		name:'county',
+		value:'Monroe'
+	},
+	{
+		label:'Montgomery',
+		name:'county',
+		value:'Montgomery'
+	},
+	{
+		label:'Nassau',
+		name:'county',
+		value:'Nassau'
+	},
+	{
+		label:'New York',
+		name:'county',
+		value:'New York'
+	},
+	{
+		label:'Niagara',
+		name:'county',
+		value:'Naigara'
+	},
+	{
+		label:'Oneida',
+		name:'county',
+		value:'Oneida'
+	},
+	{
+		label:'Onondaga',
+		name:'county',
+		value:'Onondaga'
+	},
+	{
+		label:'Ontario',
+		name:'county',
+		value:'Ontario'
+	},
+	{
+		label:'Orange',
+		name:'county',
+		value:'Orange'
+	},
+	{
+		label:'Orleans',
+		name:'county',
+		value:'Orleans'
+	},
+	{
+		label:'Oswego',
+		name:'county',
+		value:'Oswego'
+	},
+	{
+		label:'Otsego',
+		name:'county',
+		value:'Otsego'
+	},
+	{
+		label:'Putnam',
+		name:'county',
+		value:'Putnam'
+	},
+	{
+		label:'Queens',
+		name:'county',
+		value:'Queens'
+	},
+	{
+		label:'Rensselaer',
+		name:'county',
+		value:'Rensselaer'
+	},
+	{
+		label:'Richmond',
+		name:'county',
+		value:'Richmond'
+	},
+	{
+		label:'Rockland',
+		name:'county',
+		value:'Rockland'
+	},
+	{
+		label:'St. Lawrence',
+		name:'county',
+		value:'StLawrence'
+	},
+	{
+		label:'Saratoga',
+		name:'county',
+		value:'Saratoga'
+	},
+	{
+		label:'Schenectady',
+		name:'county',
+		value:'Schenectady'
+	},
+	{
+		label:'Schoharie',
+		name:'county',
+		value:'Schoharie'
+	},
+	{
+		label:'Schuyler',
+		name:'county',
+		value:'Schuyler'
+	},
+	{
+		label:'Seneca',
+		name:'county',
+		value:'Seneca'
+	},
+	{
+		label:'Steuben',
+		name:'county',
+		value:'Steuben'
+	},
+	{
+		label:'Suffolk',
+		name:'county',
+		value:'Suffolk'
+	},
+	{
+		label:'Sullivan',
+		name:'county',
+		value:'Sullivan'
+	},
+	{
+		label:'Tioga',
+		name:'county',
+		value:'Tioga'
+	},
+	{
+		label:'Tompkins',
+		name:'county',
+		value:'Tompkins'
+	},
+	{
+		label:'Ulster',
+		name:'county',
+		value:'Ulster'
+	},
+		{
+		label:'Warren',
+		name:'county',
+		value:'Warren'
+	},
+	{
+		label:'Washington',
+		name:'county',
+		value:'Washington'
+	},
+	{
+		label:'Wayne',
+		name:'county',
+		value:'Wayne'
+	},
+	{
+		label:'Westchester',
+		name:'county',
+		value:'Westchester'
+	},
+	{
+		label:'Wyoming',
+		name:'county',
+		value:'Wyoming'
+	},
+	{
+		label:'Yates',
+		name:'county',
+		value:'Yates'
+	}
+	];
+	
+	//add new options
+	require(["dojo/ready", "dojo/dom-style", "dijit/registry"], function(ready, domStyle, registry){
+		ready(function(){
+			dijit.byId('countySelect').addOption(newYorkCounties);
+			});
+	});	
+}
+
+
+
+//
+// North Carolina
+//
+function northCarolina(){
+	
+	//clear all previous options if the exist
+	dijit.byId('countySelect').removeOption(dijit.byId('countySelect').getOptions());
+	
+	//new options
+	var northCarolina = [
+		{
+		label:'Select A County',
+		name:'county',
+		value:''
+	},	
+	{
+		label:'Alamance',
+		name:'county',
+		value:'Alamance'
+	},	
+	{
+		label:'Alexander',
+		name:'county',
+		value:'Alexander'
+	},	
+	{
+		label:'Alleghany',
+		name:'county',
+		value:'Alleghany'
+	},	
+	{
+		label:'Anson',
+		name:'county',
+		value:'Anson'
+	},		
+	{
+		label:'Ashe',
+		name:'county',
+		value:'Ashe'
+	},	
+	{
+		label:'Avery',
+		name:'county',
+		value:'Avery'
+	},	
+	{
+		label:'Beaufort',
+		name:'county',
+		value:'Beaufort'
+	},	
+	{
+		label:'Bertie',
+		name:'county',
+		value:'Bertie'
+	},	
+	{
+		label:'Bladen',
+		name:'county',
+		value:'Bladen'
+	},	
+	{
+		label:'Brunswick',
+		name:'county',
+		value:'Brunswick'
+	},	
+	{
+		label:'Buncombe',
+		name:'county',
+		value:'Buncombe'
+	},	
+	{
+		label:'Burke',
+		name:'county',
+		value:'Burke'
+	},	
+	{
+		label:'Cabarrus',
+		name:'county',
+		value:'Cabarrus'
+	},	
+	{
+		label:'Caldwell',
+		name:'county',
+		value:'Caldwell'
+	},	
+	{
+		label:'Camden',
+		name:'county',
+		value:'Camden'
+	},	
+	{
+		label:'Carteret',
+		name:'county',
+		value:'Carteret'
+	},	
+	{
+		label:'Caswell',
+		name:'county',
+		value:'Caswell'
+	},	
+	{
+		label:'Catawba',
+		name:'county',
+		value:'Catawba'
+	},		
+	{
+		label:'Cherokee',
+		name:'county',
+		value:'Cherokee'
+	},	
+	{
+		label:'Chowan',
+		name:'county',
+		value:'Chowan'
+	},	
+	{
+		label:'Clay',
+		name:'county',
+		value:'Clay'
+	},
+	{
+		label:'Erie',
+		name:'county',
+		value:'Erie'
+	},
+	{
+		label:'Cleveland',
+		name:'county',
+		value:'Cleveland'
+	},
+	{
+		label:'Colombus',
+		name:'county',
+		value:'Colombus'
+	},
+	{
+		label:'Craven',
+		name:'county',
+		value:'Craven'
+	},
+	{
+		label:'Cumberland',
+		name:'county',
+		value:'Cumberland'
+	},
+	{
+		label:'Currituck',
+		name:'county',
+		value:'Currituck'
+	},
+	{
+		label:'Dare',
+		name:'county',
+		value:'Dare'
+	},
+	{
+		label:'Daivdson',
+		name:'county',
+		value:'Davidson'
+	},
+	{
+		label:'Davie',
+		name:'county',
+		value:'Davie'
+	},
+	{
+		label:'Duplin',
+		name:'county',
+		value:'Duplin'
+	},
+	{
+		label:'Durham',
+		name:'county',
+		value:'Durham'
+	},
+	{
+		label:'Edgecombe',
+		name:'county',
+		value:'Edgecombe'
+	},
+	{
+		label:'Forsyth',
+		name:'county',
+		value:'Forsyth'
+	},
+	{
+		label:'Franklin',
+		name:'county',
+		value:'Franklin'
+	},
+	{
+		label:'Gaston',
+		name:'county',
+		value:'Gaston'
+	},
+	{
+		label:'Gates',
+		name:'county',
+		value:'Gates'
+	},
+	{
+		label:'Graham',
+		name:'county',
+		value:'Graham'
+	},
+	{
+		label:'Granville',
+		name:'county',
+		value:'Granville'
+	},
+	{
+		label:'Greence',
+		name:'county',
+		value:'Greence'
+	},
+	{
+		label:'Guilford',
+		name:'county',
+		value:'Guildford'
+	},
+	{
+		label:'Halifax',
+		name:'county',
+		value:'Halifax'
+	},
+	{
+		label:'Harnett',
+		name:'county',
+		value:'Harnett'
+	},
+	{
+		label:'Haywood',
+		name:'county',
+		value:'Haywood'
+	},
+	{
+		label:'Henderson',
+		name:'county',
+		value:'Henderson'
+	},
+	{
+		label:'Hertford',
+		name:'county',
+		value:'Hertford'
+	},
+	{
+		label:'Hoke',
+		name:'county',
+		value:'Hoke'
+	},
+	{
+		label:'Hyde',
+		name:'county',
+		value:'Hyde'
+	},
+	{
+		label:'Iredell',
+		name:'county',
+		value:'Iredell'
+	},
+	{
+		label:'Jackson',
+		name:'county',
+		value:'Jackson'
+	},
+	{
+		label:'Johnston',
+		name:'county',
+		value:'Johnston'
+	},
+	{
+		label:'Jones',
+		name:'county',
+		value:'Jones'
+	},
+	{
+		label:'Lee',
+		name:'county',
+		value:'Lee'
+	},
+	{
+		label:'Lenoir',
+		name:'county',
+		value:'Lenoir'
+	},
+	{
+		label:'Lincoln',
+		name:'county',
+		value:'Lincoln'
+	},
+	{
+		label:'McDowell',
+		name:'county',
+		value:'McDowell'
+	},
+		{
+		label:'Macon',
+		name:'county',
+		value:'Macon'
+	},
+	{
+		label:'Madison',
+		name:'county',
+		value:'Madison'
+	},
+	{
+		label:'Martin',
+		name:'county',
+		value:'Martin'
+	},
+	{
+		label:'Mecklenburg',
+		name:'county',
+		value:'Mecklenburg'
+	},
+	{
+		label:'Mitchell',
+		name:'county',
+		value:'Mitchell'
+	},
+	{
+		label:'Montgomery',
+		name:'county',
+		value:'Montgomery'
+	},
+	{
+		label:'Moore',
+		name:'county',
+		value:'Moore'
+	},
+	{
+		label:'Nash',
+		name:'county',
+		value:'Nash'
+	},
+	{
+		label:'New Hanover',
+		name:'county',
+		value:'NewHanover'
+	},
+	{
+		label:'Northampton',
+		name:'county',
+		value:'Northampton'
+	},
+	{
+		label:'Onslow',
+		name:'county',
+		value:'Onslow'
+	},
+	{
+		label:'Orange',
+		name:'county',
+		value:'Orange'
+	},
+	{
+		label:'Pamlico',
+		name:'county',
+		value:'Pamlico'
+	},
+	{
+		label:'Pasquotank',
+		name:'county',
+		value:'Pasquotank'
+	},
+	{
+		label:'Pender',
+		name:'county',
+		value:'Pender'
+	},
+	{
+		label:'Perquimans',
+		name:'county',
+		value:'Perquimans'
+	},
+	{
+		label:'Person',
+		name:'county',
+		value:'Person'
+	},
+	{
+		label:'Pitt',
+		name:'county',
+		value:'Pitt'
+	},
+	{
+		label:'Polk',
+		name:'county',
+		value:'Polk'
+	},
+	{
+		label:'Randolph',
+		name:'county',
+		value:'Randolph'
+	},
+	{
+		label:'Richmond',
+		name:'county',
+		value:'Ruchmond'
+	},
+	{
+		label:'Roberson',
+		name:'county',
+		value:'Roberson'
+	},
+	{
+		label:'Rockingham',
+		name:'county',
+		value:'Rockingham'
+	},
+	{
+		label:'Rowan',
+		name:'county',
+		value:'Rowan'
+	},
+	{
+		label:'Rutherford',
+		name:'county',
+		value:'Rutherford'
+	},
+	{
+		label:'Sampson',
+		name:'county',
+		value:'Sampson'
+	},
+	{
+		label:'Scotland',
+		name:'county',
+		value:'Scotland'
+	},
+	{
+		label:'Stanly',
+		name:'county',
+		value:'Stanly'
+	},
+	{
+		label:'Stokes',
+		name:'county',
+		value:'Stokes'
+	},
+	{
+		label:'Surry',
+		name:'county',
+		value:'Surry'
+	},
+	{
+		label:'Swain',
+		name:'county',
+		value:'Swain'
+	},
+	{
+		label:'Transylvania',
+		name:'county',
+		value:'Transylvania'
+	},
+	{
+		label:'Tyrell',
+		name:'county',
+		value:'Tyrell'
+	},
+	{
+		label:'Union',
+		name:'county',
+		value:'Union'
+	},
+	{
+		label:'Vance',
+		name:'county',
+		value:'Vance'
+	},
+	{
+		label:'Wake',
+		name:'county',
+		value:'Wake'
+	},
+	{
+		label:'Warren',
+		name:'county',
+		value:'Warren'
+	},
+	{
+		label:'Washington',
+		name:'county',
+		value:'Washington'
+	},
+	{
+		label:'Watauga',
+		name:'county',
+		value:'Watauga'
+	},
+	{
+		label:'Wayne',
+		name:'county',
+		value:'Wayne'
+	},
+	{
+		label:'Wilkes',
+		name:'county',
+		value:'Wilkes'
+	},
+	{
+		label:'Wilson',
+		name:'county',
+		value:'Wilson'
+	},
+	{
+		label:'Yadkin',
+		name:'county',
+		value:'Yadkin'
+	},
+	{
+		label:'Yancey',
+		name:'county',
+		value:'Yancey'
+	}
+	];
+	
+	//add new options
+	require(["dojo/ready", "dojo/dom-style", "dijit/registry"], function(ready, domStyle, registry){
+		ready(function(){
+			dijit.byId('countySelect').addOption(northCarolina);
+			});
+	});	
+}
+
+//
+// Ohio
+//
+
+function ohioCounties(){
+	
+	//clear all previous options if the exist
+	dijit.byId('countySelect').removeOption(dijit.byId('countySelect').getOptions());
+	
+	//new options
+	var ohioCounties = [
+		{
+		label:'Select A County',
+		name:'county',
+		value:''
+	},	
+	{
+		label:'Adams',
+		name:'county',
+		value:'Adams'
+	},	
+	{
+		label:'Allen',
+		name:'county',
+		value:'Allen'
+	},	
+	{
+		label:'Ashland',
+		name:'county',
+		value:'Ashland'
+	},	
+	{
+		label:'Ashtabula',
+		name:'county',
+		value:'Ashtabula'
+	},		
+	{
+		label:'Athens',
+		name:'county',
+		value:'Athens'
+	},	
+	{
+		label:'Auglaize',
+		name:'county',
+		value:'Auglaize'
+	},	
+	{
+		label:'Belmont',
+		name:'county',
+		value:'Belmont'
+	},	
+	{
+		label:'Brown',
+		name:'county',
+		value:'Brown'
+	},	
+	{
+		label:'Butler',
+		name:'county',
+		value:'Butler'
+	},	
+	{
+		label:'Carroll',
+		name:'county',
+		value:'Carroll'
+	},	
+	{
+		label:'Champaign',
+		name:'county',
+		value:'Champaign'
+	},	
+	{
+		label:'Clark',
+		name:'county',
+		value:'Clark'
+	},	
+	{
+		label:'Clermont',
+		name:'county',
+		value:'Clermont'
+	},	
+	{
+		label:'Clinton',
+		name:'county',
+		value:'Clinton'
+	},	
+	{
+		label:'Columbinana',
+		name:'county',
+		value:'Columbiana'
+	},	
+	{
+		label:'Coshocton',
+		name:'county',
+		value:'Coshocton'
+	},	
+	{
+		label:'Crawford',
+		name:'county',
+		value:'Crawford'
+	},	
+	{
+		label:'Cuyahoga',
+		name:'county',
+		value:'Cuyahoga'
+	},		
+	{
+		label:'Darke',
+		name:'county',
+		value:'Darke'
+	},	
+	{
+		label:'Defiance',
+		name:'county',
+		value:'Defiance'
+	},	
+	{
+		label:'Delaware',
+		name:'county',
+		value:'Delaware'
+	},
+	{
+		label:'Erie',
+		name:'county',
+		value:'Erie'
+	},
+	{
+		label:'Fairfield',
+		name:'county',
+		value:'Fairfield'
+	},
+	{
+		label:'Fayette',
+		name:'county',
+		value:'Fayette'
+	},
+	{
+		label:'Franklin',
+		name:'county',
+		value:'Franklin'
+	},
+	{
+		label:'Fulton',
+		name:'county',
+		value:'Fulton'
+	},
+	{
+		label:'Gallia',
+		name:'county',
+		value:'Gallia'
+	},
+	{
+		label:'Geauga',
+		name:'county',
+		value:'Geauga'
+	},
+	{
+		label:'Greene',
+		name:'county',
+		value:'Greene'
+	},
+	{
+		label:'Guernsey',
+		name:'county',
+		value:'Guernsey'
+	},
+	{
+		label:'Hamilton',
+		name:'county',
+		value:'Hamilton'
+	},
+	{
+		label:'Hancock',
+		name:'county',
+		value:'Hancock'
+	},
+	{
+		label:'Hardin',
+		name:'county',
+		value:'Hardin'
+	},
+	{
+		label:'Harrison',
+		name:'county',
+		value:'Harrison'
+	},
+	{
+		label:'Henry',
+		name:'county',
+		value:'Henry'
+	},
+	{
+		label:'Highland',
+		name:'county',
+		value:'Highland'
+	},
+	{
+		label:'Hocking',
+		name:'county',
+		value:'Hocking'
+	},
+	{
+		label:'Holmes',
+		name:'county',
+		value:'Holmes'
+	},
+	{
+		label:'Huron',
+		name:'county',
+		value:'Huron'
+	},
+	{
+		label:'Jackson',
+		name:'county',
+		value:'Jackson'
+	},
+	{
+		label:'Jefferson',
+		name:'county',
+		value:'Jefferson'
+	},
+	{
+		label:'Knox',
+		name:'county',
+		value:'Knox'
+	},
+	{
+		label:'Lake',
+		name:'county',
+		value:'Lake'
+	},
+	{
+		label:'Lawrence',
+		name:'county',
+		value:'Lawrence'
+	},
+	{
+		label:'Licking',
+		name:'county',
+		value:'Licking'
+	},
+	{
+		label:'Logan',
+		name:'county',
+		value:'Logan'
+	},
+	{
+		label:'Lorain',
+		name:'county',
+		value:'Lorain'
+	},
+	{
+		label:'Lucas',
+		name:'county',
+		value:'Lucas'
+	},
+	{
+		label:'Madison',
+		name:'county',
+		value:'Madison'
+	},
+	{
+		label:'Mahoning',
+		name:'county',
+		value:'Mahoning'
+	},
+	{
+		label:'Marion',
+		name:'county',
+		value:'Marion'
+	},
+	{
+		label:'Medina',
+		name:'county',
+		value:'Medina'
+	},
+	{
+		label:'Meigs',
+		name:'county',
+		value:'Meigs'
+	},
+	{
+		label:'Mercer',
+		name:'county',
+		value:'Mercer'
+	},
+	{
+		label:'Miami',
+		name:'county',
+		value:'Miami'
+	},
+	{
+		label:'Monroe',
+		name:'county',
+		value:'Monroe'
+	},
+		{
+		label:'Montgomery',
+		name:'county',
+		value:'Montgomery'
+	},
+	{
+		label:'Morgan',
+		name:'county',
+		value:'Morgan'
+	},
+	{
+		label:'Morrow',
+		name:'county',
+		value:'Morrow'
+	},
+	{
+		label:'Muskingum',
+		name:'county',
+		value:'Muskingum'
+	},
+	{
+		label:'Noble',
+		name:'county',
+		value:'Noble'
+	},
+	{
+		label:'Ottawa',
+		name:'county',
+		value:'Ottawa'
+	},
+	{
+		label:'Paulding',
+		name:'county',
+		value:'Paulding'
+	},
+	{
+		label:'Perry',
+		name:'county',
+		value:'Perry'
+	},
+	{
+		label:'Pickaway',
+		name:'county',
+		value:'Pickaway'
+	},
+	{
+		label:'Pike',
+		name:'county',
+		value:'Pike'
+	},
+	{
+		label:'Portage',
+		name:'county',
+		value:'Portage'
+	},
+	{
+		label:'Preble',
+		name:'county',
+		value:'Preble'
+	},
+	{
+		label:'Putnam',
+		name:'county',
+		value:'Putnam'
+	},
+	{
+		label:'Richland',
+		name:'county',
+		value:'Richland'
+	},
+	{
+		label:'Ross',
+		name:'county',
+		value:'Ross'
+	},
+	{
+		label:'Sandusky',
+		name:'county',
+		value:'Sandusky'
+	},
+	{
+		label:'Scioto',
+		name:'county',
+		value:'Scioto'
+	},
+	{
+		label:'Seneca',
+		name:'county',
+		value:'Seneca'
+	},
+	{
+		label:'Shelby',
+		name:'county',
+		value:'Shelby'
+	},
+	{
+		label:'Stark',
+		name:'county',
+		value:'Stark'
+	},
+	{
+		label:'Summit',
+		name:'county',
+		value:'Summit'
+	},
+	{
+		label:'Trumbull',
+		name:'county',
+		value:'Trumbull'
+	},
+	{
+		label:'Tuscarawas',
+		name:'county',
+		value:'Tuscarawas'
+	},
+	{
+		label:'Union',
+		name:'county',
+		value:'Union'
+	},
+	{
+		label:'Van Wert',
+		name:'county',
+		value:'VanWert'
+	},
+	{
+		label:'Vinton',
+		name:'county',
+		value:'Vinton'
+	},
+	{
+		label:'Warren',
+		name:'county',
+		value:'Warren'
+	},
+	{
+		label:'Washington',
+		name:'county',
+		value:'Washington'
+	},
+	{
+		label:'Wayne',
+		name:'county',
+		value:'Wayne'
+	},
+	{
+		label:'Williams',
+		name:'county',
+		value:'Williams'
+	},
+	{
+		label:'Wood',
+		name:'county',
+		value:'Wood'
+	},
+	{
+		label:'Wyandot',
+		name:'county',
+		value:'Wyandot'
+	}
+	];
+	
+	//add new options
+	require(["dojo/ready", "dojo/dom-style", "dijit/registry"], function(ready, domStyle, registry){
+		ready(function(){
+			dijit.byId('countySelect').addOption(ohioCounties);
+			});
+	});	
+}
+
+
+
+//
+// Oregon
+//
+function oregonCounties(){
+	
+	//clear all previous options if the exist
+	dijit.byId('countySelect').removeOption(dijit.byId('countySelect').getOptions());
+	
+	//new options
+	var oregonCounties = [
+		{
+		label:'Select A County',
+		name:'county',
+		value:''
+	},	
+	{
+		label:'Baker',
+		name:'county',
+		value:'Baker'
+	},	
+	{
+		label:'Benton',
+		name:'county',
+		value:'Benton'
+	},	
+	{
+		label:'Clackamas',
+		name:'county',
+		value:'Clackamas'
+	},	
+	{
+		label:'Clatsop',
+		name:'county',
+		value:'Clatsop'
+	},		
+	{
+		label:'Columbia',
+		name:'county',
+		value:'Columbia'
+	},	
+	{
+		label:'Coos',
+		name:'county',
+		value:'Coos'
+	},	
+	{
+		label:'Crook',
+		name:'county',
+		value:'Crook'
+	},	
+	{
+		label:'Curry',
+		name:'county',
+		value:'Curry'
+	},	
+	{
+		label:'Deschutes',
+		name:'county',
+		value:'Deschutes'
+	},	
+	{
+		label:'Duglas',
+		name:'county',
+		value:'Douglas'
+	},	
+	{
+		label:'Gilliam',
+		name:'county',
+		value:'Gilliam'
+	},	
+	{
+		label:'Grant',
+		name:'county',
+		value:'Grant'
+	},	
+	{
+		label:'Harney',
+		name:'county',
+		value:'Harney'
+	},	
+	{
+		label:'Hood',
+		name:'county',
+		value:'Hood'
+	},	
+	{
+		label:'Jackson',
+		name:'county',
+		value:'Jackson'
+	},	
+	{
+		label:'Jefferson',
+		name:'county',
+		value:'Jefferson'
+	},	
+	{
+		label:'Josephine',
+		name:'county',
+		value:'Josephine'
+	},	
+	{
+		label:'Klamath',
+		name:'county',
+		value:'Klamath'
+	},		
+	{
+		label:'Lake',
+		name:'county',
+		value:'Lake'
+	},	
+	{
+		label:'Lane',
+		name:'county',
+		value:'Lane'
+	},	
+	{
+		label:'Lincoln',
+		name:'county',
+		value:'Lincoln'
+	},
+	{
+		label:'Linn',
+		name:'county',
+		value:'Linn'
+	},
+	{
+		label:'Malheur',
+		name:'county',
+		value:'Malheur'
+	},
+	{
+		label:'Marion',
+		name:'county',
+		value:'Marion'
+	},
+	{
+		label:'Morrow',
+		name:'county',
+		value:'Morrow'
+	},
+	{
+		label:'Multnomah',
+		name:'county',
+		value:'Multnomah'
+	},
+	{
+		label:'Polk',
+		name:'county',
+		value:'Polk'
+	},
+	{
+		label:'Sherman',
+		name:'county',
+		value:'Sherman'
+	},
+	{
+		label:'Tillamook',
+		name:'county',
+		value:'Tillamook'
+	},
+	{
+		label:'Umatilla',
+		name:'county',
+		value:'Umatilla'
+	},
+	{
+		label:'Union',
+		name:'county',
+		value:'Union'
+	},
+	{
+		label:'Wallowa',
+		name:'county',
+		value:'Wallowa'
+	},
+	{
+		label:'Wasco',
+		name:'county',
+		value:'Wasco'
+	},
+	{
+		label:'Washington',
+		name:'county',
+		value:'Washington'
+	},
+	{
+		label:'Wheeler',
+		name:'county',
+		value:'Wheeler'
+	},
+	{
+		label:'Yamhill',
+		name:'county',
+		value:'Yamhill'
+	}
+	];
+	
+	//add new options
+	require(["dojo/ready", "dojo/dom-style", "dijit/registry"], function(ready, domStyle, registry){
+		ready(function(){
+			dijit.byId('countySelect').addOption(oregonCounties);
+			});
+	});	
+}
+
+//
+// Utah
+//
+function utahCounties(){
+	
+	//clear all previous options if the exist
+	dijit.byId('countySelect').removeOption(dijit.byId('countySelect').getOptions());
+	
+	//new options
+	var utahCounties = [
+		{
+		label:'Select A County',
+		name:'county',
+		value:''
+	},	
+	{
+		label:'Beaver',
+		name:'county',
+		value:'Beaver'
+	},	
+	{
+		label:'Box Elder',
+		name:'county',
+		value:'BoxElder'
+	},	
+	{
+		label:'Cache',
+		name:'county',
+		value:'Cache'
+	},	
+	{
+		label:'Carbon',
+		name:'county',
+		value:'Carbon'
+	},		
+	{
+		label:'Daggett',
+		name:'county',
+		value:'Daggett'
+	},	
+	{
+		label:'Davis',
+		name:'county',
+		value:'Davis'
+	},	
+	{
+		label:'Duchesne',
+		name:'county',
+		value:'Duchesne'
+	},	
+	{
+		label:'Emery',
+		name:'county',
+		value:'Emery'
+	},	
+	{
+		label:'Garfield',
+		name:'county',
+		value:'Garfield'
+	},	
+	{
+		label:'Grand',
+		name:'county',
+		value:'Grand'
+	},	
+	{
+		label:'Iron',
+		name:'county',
+		value:'Iron'
+	},	
+	{
+		label:'Juab',
+		name:'county',
+		value:'Juab'
+	},	
+	{
+		label:'Kane',
+		name:'county',
+		value:'Kane'
+	},	
+	{
+		label:'Millard',
+		name:'county',
+		value:'Millard'
+	},	
+	{
+		label:'Morgan',
+		name:'county',
+		value:'Morgan'
+	},	
+	{
+		label:'Piute',
+		name:'county',
+		value:'Piute'
+	},	
+	{
+		label:'Rich',
+		name:'county',
+		value:'Rich'
+	},	
+	{
+		label:'Salt Lake',
+		name:'county',
+		value:'SaltLake'
+	},		
+	{
+		label:'San Juan',
+		name:'county',
+		value:'San Juan'
+	},	
+	{
+		label:'Sanpete',
+		name:'county',
+		value:'Sanpete'
+	},	
+	{
+		label:'Sevier',
+		name:'county',
+		value:'Sevier'
+	},
+	{
+		label:'Summit',
+		name:'county',
+		value:'Summit'
+	},
+	{
+		label:'Tooele',
+		name:'county',
+		value:'Tooele'
+	},
+	{
+		label:'Uintah',
+		name:'county',
+		value:'Uintah'
+	},
+	{
+		label:'Utah',
+		name:'county',
+		value:'Utah'
+	},
+	{
+		label:'Wasatch',
+		name:'county',
+		value:'Wasatch'
+	},
+	{
+		label:'Washington',
+		name:'county',
+		value:'Washington'
+	},
+	{
+		label:'Wayne',
+		name:'county',
+		value:'Wayne'
+	},
+	{
+		label:'Weber',
+		name:'county',
+		value:'Weber'
+	}
+	];
+	
+	//add new options
+	require(["dojo/ready", "dojo/dom-style", "dijit/registry"], function(ready, domStyle, registry){
+		ready(function(){
+			dijit.byId('countySelect').addOption(utahCounties);
+			});
+	});	
+}
+//
+// Vermont
+//
+
+function vermontCounties(){
+	
+	//clear all previous options if the exist
+	dijit.byId('countySelect').removeOption(dijit.byId('countySelect').getOptions());
+	
+	//new options
+	var vermontCounties = [
+		{
+		label:'Select A County',
+		name:'county',
+		value:''
+	},	
+	{
+		label:'Addison',
+		name:'county',
+		value:'Addison'
+	},	
+	{
+		label:'Bennington',
+		name:'county',
+		value:'Bennington'
+	},	
+	{
+		label:'Caledonia',
+		name:'county',
+		value:'Caledonia'
+	},	
+	{
+		label:'Chittenden',
+		name:'county',
+		value:'Chittenden'
+	},		
+	{
+		label:'Essex',
+		name:'county',
+		value:'Essex'
+	},	
+	{
+		label:'Franklin',
+		name:'county',
+		value:'Franklin'
+	},	
+	{
+		label:'Grand Isle',
+		name:'county',
+		value:'GrandIsle'
+	},	
+	{
+		label:'Lamoille',
+		name:'county',
+		value:'Lamoille'
+	},	
+	{
+		label:'Orange',
+		name:'county',
+		value:'Orange'
+	},	
+	{
+		label:'Orleans',
+		name:'county',
+		value:'Orleans'
+	},	
+	{
+		label:'Rutland',
+		name:'county',
+		value:'Rutland'
+	},	
+	{
+		label:'Washington',
+		name:'county',
+		value:'Washington'
+	},	
+	{
+		label:'Windham',
+		name:'county',
+		value:'Windham'
+	},	
+	{
+		label:'Windsor',
+		name:'county',
+		value:'Windsor'
+	}
+	];
+	
+	//add new options
+	require(["dojo/ready", "dojo/dom-style", "dijit/registry"], function(ready, domStyle, registry){
+		ready(function(){
+			dijit.byId('countySelect').addOption(vermontCounties);
+			});
+	});	
+}
+
+
+//
+// Virginia
+// there are 2 frnanklin and farifax roanoke counties on the wiki page, only put one 
+// version in, check later when the data sets come in
+//
+function virginiaCounties(){
+	
+	//clear all previous options if the exist
+	dijit.byId('countySelect').removeOption(dijit.byId('countySelect').getOptions());
+	
+	//new options
+	var virginiaCounties = [
+		{
+		label:'Select A County',
+		name:'county',
+		value:''
+	},	
+	{
+		label:'Accomack',
+		name:'county',
+		value:'Accomack'
+	},	
+	{
+		label:'Albemarle',
+		name:'county',
+		value:'Albemarle'
+	},	
+	{
+		label:'Alleghany',
+		name:'county',
+		value:'Alleghany'
+	},	
+	{
+		label:'Amelia',
+		name:'county',
+		value:'Amelia'
+	},		
+	{
+		label:'Amherst',
+		name:'county',
+		value:'Amherst'
+	},	
+	{
+		label:'Appomattox',
+		name:'county',
+		value:'Appomattox'
+	},	
+	{
+		label:'Arlington',
+		name:'county',
+		value:'Arlington'
+	},	
+	{
+		label:'Augusta',
+		name:'county',
+		value:'Augusta'
+	},	
+	{
+		label:'Bath',
+		name:'county',
+		value:'Bath'
+	},	
+	{
+		label:'Bedford',
+		name:'county',
+		value:'Bedford'
+	},	
+	{
+		label:'Bland',
+		name:'county',
+		value:'Bland'
+	},	
+	{
+		label:'Botetourt',
+		name:'county',
+		value:'Botetourt'
+	},	
+	{
+		label:'Brunswick',
+		name:'county',
+		value:'Brunswick'
+	},	
+	{
+		label:'Buchanan',
+		name:'county',
+		value:'Buchanan'
+	},	
+	{
+		label:'Buckingham',
+		name:'county',
+		value:'Buckingham'
+	},	
+	{
+		label:'Campbell',
+		name:'county',
+		value:'Campbell'
+	},	
+	{
+		label:'Caroline',
+		name:'county',
+		value:'Caroline'
+	},	
+	{
+		label:'Carroll',
+		name:'county',
+		value:'Carroll'
+	},		
+	{
+		label:'Charles City',
+		name:'county',
+		value:'CharlesCity'
+	},	
+	{
+		label:'Charlotte',
+		name:'county',
+		value:'Charlotte'
+	},	
+	{
+		label:'Chesterfield',
+		name:'county',
+		value:'Chesterfield'
+	},
+	{
+		label:'Clarke',
+		name:'county',
+		value:'Clarke'
+	},
+	{
+		label:'Craig',
+		name:'county',
+		value:'Craig'
+	},
+	{
+		label:'Culpeper',
+		name:'county',
+		value:'Culpeper'
+	},
+	{
+		label:'Cumberland',
+		name:'county',
+		value:'Cumberland'
+	},
+	{
+		label:'Dickenson',
+		name:'county',
+		value:'Dickenson'
+	},
+	{
+		label:'Dinwiddie',
+		name:'county',
+		value:'Dinwiddie'
+	},
+	{
+		label:'Essex',
+		name:'county',
+		value:'Essex'
+	},
+	{
+		label:'Fairfax',
+		name:'county',
+		value:'Fairfax'
+	},
+	{
+		label:'Fauquier',
+		name:'county',
+		value:'Fauquier'
+	},
+	{
+		label:'Floyd',
+		name:'county',
+		value:'Floyd'
+	},
+	{
+		label:'Fluvanna',
+		name:'county',
+		value:'Fluvanna'
+	},
+	{
+		label:'Franklin',
+		name:'county',
+		value:'Franklin'
+	},
+	{
+		label:'Frederick',
+		name:'county',
+		value:'Frederick'
+	},
+	{
+		label:'Giles',
+		name:'county',
+		value:'Giles'
+	},
+	{
+		label:'Gloucester',
+		name:'county',
+		value:'Gloucester'
+	},
+	{
+		label:'Goochland',
+		name:'county',
+		value:'Goochland'
+	},
+	{
+		label:'Grayson',
+		name:'county',
+		value:'Grayson'
+	},
+	{
+		label:'Greene',
+		name:'county',
+		value:'Greene'
+	},
+	{
+		label:'Greensville',
+		name:'county',
+		value:'Greensville'
+	},
+	{
+		label:'Halifax',
+		name:'county',
+		value:'Halifax'
+	},
+	{
+		label:'Hanover',
+		name:'county',
+		value:'Hanover'
+	},
+	{
+		label:'Henrico',
+		name:'county',
+		value:'Henrico'
+	},
+	{
+		label:'Henry',
+		name:'county',
+		value:'Henry'
+	},
+	{
+		label:'Highland',
+		name:'county',
+		value:'Highland'
+	},
+	{
+		label:'Isle of Wight',
+		name:'county',
+		value:'IsleOfWight'
+	},
+	{
+		label:'James City',
+		name:'county',
+		value:'JamesCity'
+	},
+	{
+		label:'King and Queen',
+		name:'county',
+		value:'KingAndQueen'
+	},
+	{
+		label:'King George',
+		name:'county',
+		value:'KingGeorge'
+	},
+	{
+		label:'King William',
+		name:'county',
+		value:'KingWilliam'
+	},
+	{
+		label:'Lancaster',
+		name:'county',
+		value:'Lancaster'
+	},
+	{
+		label:'Lee',
+		name:'county',
+		value:'Lee'
+	},
+	{
+		label:'Loudoun',
+		name:'county',
+		value:'Loudoun'
+	},
+	{
+		label:'Louisa',
+		name:'county',
+		value:'Louisa'
+	},
+	{
+		label:'Lunenburg',
+		name:'county',
+		value:'Lunenburg'
+	},
+	{
+		label:'Madison',
+		name:'county',
+		value:'Madison'
+	},
+	{
+		label:'Mathews',
+		name:'county',
+		value:'Mathews'
+	},
+	{
+		label:'Mecklenburg',
+		name:'county',
+		value:'Mecklenburg'
+	},
+	{
+		label:'Middlesex',
+		name:'county',
+		value:'Middlesex'
+	},
+	{
+		label:'Montgomery',
+		name:'county',
+		value:'Montgomery'
+	},
+	{
+		label:'Nelson',
+		name:'county',
+		value:'Nelson'
+	},
+	{
+		label:'New Kent',
+		name:'county',
+		value:'NewKent'
+	},
+	{
+		label:'Northampton',
+		name:'county',
+		value:'Northamoton'
+	},
+	{
+		label:'Nothumberland',
+		name:'county',
+		value:'Northumberland'
+	},
+	{
+		label:'Nottoway',
+		name:'county',
+		value:'Nottoway'
+	},
+	{
+		label:'Orange',
+		name:'county',
+		value:'Orange'
+	},
+	{
+		label:'Page',
+		name:'county',
+		value:'Page'
+	},
+	{
+		label:'Patrick',
+		name:'county',
+		value:'Patrick'
+	},
+	{
+		label:'Pittsylvania',
+		name:'county',
+		value:'Pittsylvania'
+	},
+	{
+		label:'Powhatan',
+		name:'county',
+		value:'Powhatan'
+	},
+	{
+		label:'Prince Edward',
+		name:'county',
+		value:'PrinceEdward'
+	},
+	{
+		label:'Prince George',
+		name:'county',
+		value:'PrinceGeorge'
+	},
+	{
+		label:'Prince William',
+		name:'county',
+		value:'PrinceWilliam'
+	},
+	{
+		label:'Pulaski',
+		name:'county',
+		value:'Pulaski'
+	},
+	{
+		label:'Rappahannock',
+		name:'county',
+		value:'Rappahannock'
+	},
+	{
+		label:'Richmond',
+		name:'county',
+		value:'Richmond'
+	},
+	{
+		label:'Roanoke',
+		name:'county',
+		value:'Roanoke'
+	},
+	{
+		label:'Rockbridge',
+		name:'county',
+		value:'Rockbridge'
+	},
+	{
+		label:'Rockingham',
+		name:'county',
+		value:'Roackingham'
+	},
+	{
+		label:'Russell',
+		name:'county',
+		value:'Russell'
+	},
+	{
+		label:'Scott',
+		name:'county',
+		value:'Scott'
+	},
+	{
+		label:'Shenandoah',
+		name:'county',
+		value:'Dhenandoah'
+	},
+	{
+		label:'Smyth',
+		name:'county',
+		value:'Smyth'
+	},
+	{
+		label:'Southhampton',
+		name:'county',
+		value:'Southhampton'
+	},
+	{
+		label:'Spotsyvania',
+		name:'county',
+		value:'Spotsylvania'
+	},
+	{
+		label:'Stafford',
+		name:'county',
+		value:'Stafford'
+	},
+	{
+		label:'Surry',
+		name:'county',
+		value:'Surry'
+	},
+	{
+		label:'Sussex',
+		name:'county',
+		value:'Fairfax'
+	},
+	{
+		label:'Tazewell',
+		name:'county',
+		value:'Tazewell'
+	},
+	{
+		label:'Warren',
+		name:'county',
+		value:'Warren'
+	},
+	{
+		label:'Washington',
+		name:'county',
+		value:'Washington'
+	},
+	{
+		label:'Westmoreland',
+		name:'county',
+		value:'Westmoreland'
+	},
+	{
+		label:'Wise',
+		name:'county',
+		value:'Wise'
+	},
+	{
+		label:'Wythe',
+		name:'county',
+		value:'Wythe'
+	},
+	{
+		label:'York',
+		name:'county',
+		value:'York'
+	},
+	{
+		label:'Alexandria',
+		name:'county',
+		value:'Alexandria'
+	},
+	{
+		label:'Bedford',
+		name:'county',
+		value:'Bedford'
+	},
+	{
+		label:'Bristol',
+		name:'county',
+		value:'Bristol'
+	},
+	{
+		label:'Buena Vista',
+		name:'county',
+		value:'BuenaVista'
+	},
+	{
+		label:'Charlottesville',
+		name:'county',
+		value:'Charlottesville'
+	},
+	{
+		label:'Chesapeake',
+		name:'county',
+		value:'Chesapeake'
+	},
+	{
+		label:'Colonial Heights',
+		name:'county',
+		value:'ColonialHeights'
+	},
+	{
+		label:'Covington',
+		name:'county',
+		value:'Covington'
+	},
+	{
+		label:'Danville',
+		name:'county',
+		value:'Danville'
+	},
+	{
+		label:'Emporia',
+		name:'county',
+		value:'Emporia'
+	},
+	{
+		label:'Falls Church',
+		name:'county',
+		value:'Falls Church'
+	},
+	{
+		label:'Fredericksburg',
+		name:'county',
+		value:'Fredericksburg'
+	},
+	{
+		label:'Galax',
+		name:'county',
+		value:'Galax'
+	},
+	{
+		label:'Hampton',
+		name:'county',
+		value:'Hampton'
+	},
+	{
+		label:'Harrisonburg',
+		name:'county',
+		value:'Harrisonburg'
+	},
+	{
+		label:'Hopewell',
+		name:'county',
+		value:'Hopewell'
+	},
+	{
+		label:'Lexington',
+		name:'county',
+		value:'Lexington'
+	},
+	{
+		label:'Lynchburg',
+		name:'county',
+		value:'Lynchburg'
+	},
+	{
+		label:'Manassas',
+		name:'county',
+		value:'Manassas'
+	},
+	{
+		label:'Manassas Park',
+		name:'county',
+		value:'ManassasPark'
+	},
+	{
+		label:'Martinsville',
+		name:'county',
+		value:'Martinsville'
+	},
+	{
+		label:'Newport',
+		name:'county',
+		value:'Newport'
+	},
+	{
+		label:'Norfolk',
+		name:'county',
+		value:'Norfolk'
+	},
+	{
+		label:'Norton',
+		name:'county',
+		value:'Norton'
+	},
+	{
+		label:'Petersburg',
+		name:'county',
+		value:'Petersburg'
+	},
+	{
+		label:'Poquoson',
+		name:'county',
+		value:'Poquoson'
+	},
+	{
+		label:'Portsmouth',
+		name:'county',
+		value:'Portsmouth'
+	},
+	{
+		label:'Radford',
+		name:'county',
+		value:'Radford'
+	},
+	{
+		label:'Richmond',
+		name:'county',
+		value:'Richmond'
+	},
+	{
+		label:'Salem',
+		name:'county',
+		value:'Salem'
+	},
+	{
+		label:'Staunton',
+		name:'county',
+		value:'Staunton'
+	},
+	{
+		label:'Suffolk',
+		name:'county',
+		value:'Suffolk'
+	},
+	{
+		label:'Virginia Beach',
+		name:'county',
+		value:'Virginia Beach'
+	},
+	{
+		label:'Waynesboro',
+		name:'county',
+		value:'Waynesboro'
+	},
+	{
+		label:'Williamsburg',
+		name:'county',
+		value:'Williamsburg'
+	},
+	{
+		label:'Winchester',
+		name:'county',
+		value:'Winchester'
+	}
+	];
+	
+	//add new options
+	require(["dojo/ready", "dojo/dom-style", "dijit/registry"], function(ready, domStyle, registry){
+		ready(function(){
+			dijit.byId('countySelect').addOption(virginiaCounties);
+			});
+	});	
+}
+
+//
+// Washington
+//
+function washingtonCounties(){
+	
+	//clear all previous options if the exist
+	dijit.byId('countySelect').removeOption(dijit.byId('countySelect').getOptions());
+	
+	//new options
+	var washingtonCounties = [
+		{
+		label:'Select A County',
+		name:'county',
+		value:''
+	},	
+	{
+		label:'Adams',
+		name:'county',
+		value:'Adams'
+	},	
+	{
+		label:'Asotin',
+		name:'county',
+		value:'Asotin'
+	},	
+	{
+		label:'Benton',
+		name:'county',
+		value:'Benton'
+	},	
+	{
+		label:'Chelan',
+		name:'county',
+		value:'Chelan'
+	},		
+	{
+		label:'Clallam',
+		name:'county',
+		value:'Clallam'
+	},	
+	{
+		label:'Clark',
+		name:'county',
+		value:'Clark'
+	},	
+	{
+		label:'Columbia',
+		name:'county',
+		value:'Columbia'
+	},	
+	{
+		label:'Cowlitz',
+		name:'county',
+		value:'Cowlitz'
+	},	
+	{
+		label:'Douglas',
+		name:'county',
+		value:'Douglas'
+	},	
+	{
+		label:'Ferry',
+		name:'county',
+		value:'Ferry'
+	},	
+	{
+		label:'Franklin',
+		name:'county',
+		value:'Franklin'
+	},	
+	{
+		label:'Garfield',
+		name:'county',
+		value:'Garfield'
+	},	
+	{
+		label:'Grant',
+		name:'county',
+		value:'Grant'
+	},	
+	{
+		label:'Grays Harbor',
+		name:'county',
+		value:'GraysHarbor'
+	},
+	{
+		label:'Island',
+		name:'county',
+		value:'Island'
+	},
+	{
+		label:'Jefferson',
+		name:'county',
+		value:'Jefferson'
+	},
+	{
+		label:'King',
+		name:'county',
+		value:'King'
+	},
+	{
+		label:'Kitsap',
+		name:'county',
+		value:'Kitsap'
+	},
+	{
+		label:'Kittitas',
+		name:'county',
+		value:'Kittitas'
+	},
+	{
+		label:'Klickitat',
+		name:'county',
+		value:'Klickitat'
+	},
+	{
+		label:'Lewis',
+		name:'county',
+		value:'Lewis'
+	},
+	{
+		label:'Lincoln',
+		name:'county',
+		value:'Lincoln'
+	},
+	{
+		label:'Mason',
+		name:'county',
+		value:'Mason'
+	},
+	{
+		label:'Okanogan',
+		name:'county',
+		value:'Okanogan'
+	},
+	{
+		label:'Pacific',
+		name:'county',
+		value:'Pacific'
+	},
+	{
+		label:'Pend Oreille',
+		name:'county',
+		value:'PendOreille'
+	},
+	{
+		label:'Pierce',
+		name:'county',
+		value:'Pierce'
+	},
+	{
+		label:'San Juan',
+		name:'county',
+		value:'SanJuan'
+	},
+	{
+		label:'Skagit',
+		name:'county',
+		value:'Skagit'
+	},
+	{
+		label:'Skamania',
+		name:'county',
+		value:'Skamania'
+	},
+	{
+		label:'Snohomish',
+		name:'county',
+		value:'Snohomish'
+	},
+	{
+		label:'Spokane',
+		name:'county',
+		value:'Spokane'
+	},
+	{
+		label:'Stevens',
+		name:'county',
+		value:'Stevens'
+	},
+	{
+		label:'Thruston',
+		name:'county',
+		value:'Thruston'
+	},
+	{
+		label:'Wahkiakum',
+		name:'county',
+		value:'Wahkiakum'
+	},
+	{
+		label:'Walla Walla',
+		name:'county',
+		value:'WallaWalla'
+	},
+	{
+		label:'Whitman',
+		name:'county',
+		value:'Whitman'
+	},
+	{
+		label:'Yakima',
+		name:'county',
+		value:'Yakima'
+	}
+	];
+	
+	//add new options
+	require(["dojo/ready", "dojo/dom-style", "dijit/registry"], function(ready, domStyle, registry){
+		ready(function(){
+			dijit.byId('countySelect').addOption(washingtonCounties);
+			});
+	});	
+}
+
+//
+// Wyoming
+//
+function wyomingCounties(){
+	
+	//clear all previous options if the exist
+	dijit.byId('countySelect').removeOption(dijit.byId('countySelect').getOptions());
+	
+	//new options
+	var wyomingCounties = [
+		{
+		label:'Select A County',
+		name:'county',
+		value:''
+	},	
+	{
+	label:'Albany',
+	name:'county',
+	value:'Albany'
+	},
+	{
+	label:'Big Horn',
+	name:'county',
+	value:'Big Horn'
+	},
+	{
+	label:'Campbell',
+	name:'county',
+	value:'Campbell'
+	},
+	{
+	label:'Carbon',
+	name:'county',
+	value:'Carbon'
+	},
+	{
+	label:'Converse',
+	name:'county',
+	value:'Converse'
+	},
+	{
+	label:'Crook',
+	name:'county',
+	value:'Crook'
+	},
+	{
+	label:'Fremont',
+	name:'county',
+	value:'Fremont'
+	},
+	{
+	label:'Goshen',
+	name:'county',
+	value:'Goshen'
+	},
+	{
+	label:'Hot Springs',
+	name:'county',
+	value:'Hot Springs'
+	},
+	{
+	label:'Johnson',
+	name:'county',
+	value:'Johnson'
+	},
+	{
+	label:'Laramie',
+	name:'county',
+	value:'Laramie'
+	},
+	{
+	label:'Lincoln',
+	name:'county',
+	value:'Lincoln'
+	},
+	{
+	label:'Natrona',
+	name:'county',
+	value:'Natrona'
+	},
+	{
+	label:'Niobrara',
+	name:'county',
+	value:'Niobrara'
+	},
+	{
+	label:'Park',
+	name:'county',
+	value:'Park'
+	},
+	{
+	label:'Platte',
+	name:'county',
+	value:'Platte'
+	},
+	{
+	label:'Sheridan',
+	name:'county',
+	value:'Sheridan'
+	},
+	{
+	label:'Sublette',
+	name:'county',
+	value:'Sublette'
+	},
+	{
+	label:'Sweetwater',
+	name:'county',
+	value:'Sweetwater'
+	},
+	{
+	label:'Teton',
+	name:'county',
+	value:'Teton'
+	},
+	{
+	label:'Uinta',
+	name:'county',
+	value:'Uinta'
+	},
+	{
+	label:'Washakie',
+	name:'county',
+	value:'Washakie'
+	},
+	{
+	label:'Weston',
+	name:'county',
+	value:'Weston'
+	}
+	];
+	
+	//add new options
+	require(["dojo/ready", "dojo/dom-style", "dijit/registry"], function(ready, domStyle, registry){
+		ready(function(){
+			dijit.byId('countySelect').addOption(wyomingCounties);
+			});
+	});	
+}
